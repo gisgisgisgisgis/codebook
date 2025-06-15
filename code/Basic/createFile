@@ -1,0 +1,4 @@
+// Linux 
+for i in {A..Z}; do cp tem.cpp $i.cpp; done
+// Windows
+'A'..'Z' | % { cp tem.cpp "$_.cpp" }
