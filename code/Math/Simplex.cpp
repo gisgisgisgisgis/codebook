@@ -1,5 +1,5 @@
-// a : Matrix
-// b, c: Vector
+// a : Matrix; b, c: Vector
+// Ax <= b, max c^T x
 // T: double or long double
 template <typename T>
 struct Simplex {
