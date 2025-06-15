@@ -4,8 +4,8 @@ using namespace std;
 using i64 = long long;
 
 #define int i64
-#define rep(x, y, z) for (int x = (y); x <= (z); x++)
-#define all(x) x.begin(), x.end()
+#define rep(a, b, c) for (int a = (b); a <= (c); a++)
+#define all(a) a.begin(), a.end()
 #define pb push_back
 
 bool chmin(auto &a, auto b) { return (b < a and (a = b, true)); }
