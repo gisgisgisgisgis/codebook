@@ -11,7 +11,6 @@ struct Simplex {
     int n, m, V, C;
     std::vector<std::vector<T>> A;
     std::vector<int> basis;
-
     Simplex(const std::vector<std::vector<T>>& a,
             const std::vector<T>& b,
             const std::vector<T>& c) : n(b.size()), m(c.size()), V(n + m), C(V + 1), A(n + 1, std::vector<T>(C)), basis(n) {
@@ -23,9 +22,8 @@ struct Simplex {
         ranges::transform(c, A[n].begin(), [](T x) {
             return -x;
         });
-        ranges::iota(basis, m);
+        ranges::iota(basis, m);  // C++23
     }
-
     void pivot(int r, int s) {
         const T inv = 1.0 / A[r][s];
         for (auto& x : A[r]) {
@@ -43,7 +41,6 @@ struct Simplex {
         }
         basis[r] = s;
     }
-    
     auto work() {
         for (int i = 0; i < n; i++) {
             if (A[i].back() < -eps) {
