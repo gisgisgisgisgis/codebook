@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+namespace ranges = std::ranges;
 
 #ifdef PEPPA
 template <typename R>
