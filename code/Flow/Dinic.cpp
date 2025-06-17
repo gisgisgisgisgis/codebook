@@ -1,23 +1,18 @@
 template <typename T>
 struct Dinic {
-    
     const T INF = numeric_limits<T>::max() / 2;
-
     struct edge {
         int v, r; T rc;
     };
-
     vector<vector<edge>> adj;
-    vector<int> dis, it;
+    vector<T> dis, it;
     Dinic(int n) : adj(n), dis(n), it(n) {}
-
     void add_edge(int u, int v, T c) {
         adj[u].pb({v, adj[v].size(), c});
         adj[v].pb({u, adj[u].size() - 1, 0});
     }
-
     bool bfs(int s, int t) {
-        fill(all(dis), IINF);
+        fill(all(dis), INF);
         queue<int> q;
         q.push(s);
         dis[s] = 0;
@@ -25,12 +20,12 @@ struct Dinic {
             int u = q.front();
             q.pop();
             for (const auto& [v, r, rc] : adj[u]) {
-                if (dis[v] < IINF || rc == 0) continue;
+                if (dis[v] < INF || rc == 0) continue;
                 dis[v] = dis[u] + 1;
                 q.push(v);
             }
         }
-        return dis[t] < IINF;
+        return dis[t] < INF;
     }
 
     T dfs(int u, int t, T cap) {
@@ -59,5 +54,5 @@ struct Dinic {
         return ans;
     }
 
-    bool inScut(int u) { return dis[u] < IINF; }
+    bool inScut(int u) { return dis[u] < INF; }
 };
