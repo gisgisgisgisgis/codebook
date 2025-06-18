@@ -12,7 +12,7 @@ template <I T>
 std::ostream& operator<<(std::ostream& o, const T& v) {
     o << "{";
     int f = 0;
-    for (auto i : v) o << (f++ ? " " : "") << i;
+    for (auto &&i : v) o << (f++ ? " " : "") << i;
     return o << "}";
 }
 void debug__(int c, auto&&... a) {
