@@ -1,6 +1,6 @@
 // \sum_0^n floor((a * x + b) / c)) in log(n + m + a + b)
-ll floor_sum(ll a, ll b, ll c, ll n) { // add mod if needed
-    ll m = (a * n + b) / c;
+int floor_sum(int a, int b, int c, int n) { // add mod if needed
+    int m = (a * n + b) / c;
     if (a >= c || b >= c)
         return (a / c) * (n * (n + 1) / 2) + (b / c) * (n + 1) + floor_sum(a % c, b % c, c, n);
     if (n < 0 || a == 0)
