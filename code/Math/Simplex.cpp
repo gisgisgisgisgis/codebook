@@ -6,7 +6,7 @@
 //   state = 2 → infeasible
 template <typename T>
 struct Simplex {
-    const T eps = 1E-7;
+    const T eps = 1E-9;
     const T inf = std::numeric_limits<T>::infinity();
     int n, m, V, C;
     std::vector<std::vector<T>> A;
@@ -22,7 +22,7 @@ struct Simplex {
         ranges::transform(c, A[n].begin(), [](T x) {
             return -x;
         });
-        ranges::iota(basis, m);  // C++23
+        std::iota(basis.begin(), basis.end(), m);
     }
     void pivot(int r, int s) {
         const T inv = 1.0 / A[r][s];
@@ -42,10 +42,27 @@ struct Simplex {
         basis[r] = s;
     }
     auto work() {
-        for (int i = 0; i < n; i++) {
-            if (A[i].back() < -eps) {
+        while (true) {
+            int r = -1, s = -1;
+            for (int i = 0; i < n; i++) {
+                if (A[i].back() < -eps) {
+                    r = i;
+                    break;
+                }
+            }
+            if (r == -1) {
+                break;
+            }
+            for (int i = 0; i < V; i++) {
+                if (A[r][i] < -eps) {
+                    s = i;
+                    break;
+                }
+            }
+            if (s == -1) {
                 return std::tuple(2, inf, std::vector<T>{});
             }
+            pivot(r, s);
         }
         while (true) {
             int s = -1, r = -1;
