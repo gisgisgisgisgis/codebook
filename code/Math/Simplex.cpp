@@ -1,100 +1,64 @@
-// a : Matrix; b, c : Vector
-// max cᵀx subject to (Ax <= b and x >= 0)
-// return {state, opt, solVector}
-//   state = 0 → optimal
-//   state = 1 → unbounded
-//   state = 2 → infeasible
-template <typename T>
-struct Simplex {
-    const T eps = 1E-9;
-    const T inf = std::numeric_limits<T>::infinity();
-    int n, m, V, C;
-    std::vector<std::vector<T>> A;
-    std::vector<int> basis;
-    Simplex(const std::vector<std::vector<T>>& a,
-            const std::vector<T>& b,
-            const std::vector<T>& c) : n(b.size()), m(c.size()), V(n + m), C(V + 1), A(n + 1, std::vector<T>(C)), basis(n) {
-        for (int i = 0; i < n; i++) {
-            ranges::copy(a[i], A[i].begin());
-            A[i][m + i] = 1.0;
-            A[i].back() = b[i];
-        }
-        ranges::transform(c, A[n].begin(), [](T x) {
-            return -x;
-        });
-        std::iota(basis.begin(), basis.end(), m);
+// max{cx} subject to {Ax<=b, x>=0}
+// n: constraints, m: vars !!!
+// x[] is the optimal solution vector
+// usage : 
+// x = simplex(A, b, c); (A <= 100 x 100)
+vector<double> simplex(
+        const vector<vector<double>> &a,
+        const vector<double> &b, 
+        const vector<double> &c) {
+    
+    int n = (int)a.size(), m = (int)a[0].size() + 1;
+    vector val(n + 2, vector<double>(m + 1));
+    vector<int> idx(n + m);
+    iota(all(idx), 0);
+    int r = n, s = m - 1;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m - 1; ++j)
+            val[i][j] = -a[i][j];
+        val[i][m - 1] = 1;
+        val[i][m] = b[i];
+        if (val[r][m] > val[i][m])
+            r = i;
     }
-    void pivot(int r, int s) {
-        const T inv = 1.0 / A[r][s];
-        for (auto& x : A[r]) {
-            x *= inv;
-        }
-        for (int i = 0; i <= n; i++) {
-            if (i != r && std::fabs(A[i][s]) > eps) {
-                const T f = std::exchange(A[i][s], 0);
-                for (int j = 0; j < C; j++) {
-                    if (j != s) {
-                        A[i][j] -= f * A[r][j];
-                    }
-                }
+    copy(all(c), val[n].begin());
+    val[n + 1][m - 1] = -1;
+    for (double num; ; ) {
+        if (r < n) {
+            swap(idx[s], idx[r + m]);
+            val[r][s] = 1 / val[r][s];
+            for (int j = 0; j <= m; ++j) if (j != s)
+                val[r][j] *= -val[r][s];
+            for (int i = 0; i <= n + 1; ++i) if (i != r) {
+                for (int j = 0; j <= m; ++j) if (j != s)
+                    val[i][j] += val[r][j] * val[i][s];
+                val[i][s] *= val[r][s];
             }
         }
-        basis[r] = s;
+        r = s = -1;
+        for (int j = 0; j < m; ++j)
+            if (s < 0 || idx[s] > idx[j])
+                if (val[n + 1][j] > eps || val[n + 1][j] > -eps && val[n][j] > eps)
+                    s = j;
+        if (s < 0) break;
+        for (int i = 0; i < n; ++i) if (val[i][s] < -eps) {
+            if (r < 0
+                || (num = val[r][m] / val[r][s] - val[i][m] / val[i][s]) < -eps
+                || num < eps && idx[r + m] > idx[i + m])
+                r = i;
+        }
+        if (r < 0) {
+            //    Solution is unbounded.
+            return vector<double>{};
+        }
     }
-    auto work() {
-        while (true) {
-            int r = -1, s = -1;
-            for (int i = 0; i < n; i++) {
-                if (A[i].back() < -eps) {
-                    r = i;
-                    break;
-                }
-            }
-            if (r == -1) {
-                break;
-            }
-            for (int i = 0; i < V; i++) {
-                if (A[r][i] < -eps) {
-                    s = i;
-                    break;
-                }
-            }
-            if (s == -1) {
-                return std::tuple(2, inf, std::vector<T>{});
-            }
-            pivot(r, s);
-        }
-        while (true) {
-            int s = -1, r = -1;
-            T res = inf;
-            for (int i = 0; i < V; i++) {
-                if (A.back()[i] < -eps) {
-                    s = i;
-                    break;
-                }
-            }
-            if (s == -1) {
-                break;
-            }
-            for (int i = 0; i < n; i++) {
-                if (A[i][s] > eps) {
-                    T ratio = A[i].back() / A[i][s];
-                    if (ratio < res - eps) {
-                        res = ratio, r = i;
-                    }
-                }
-            }
-            if (r == -1) {
-                return std::tuple(1, inf, std::vector<T>{});
-            }
-            pivot(r, s);
-        }
-        std::vector<T> X(m);
-        for (int i = 0; i < n; i++) {
-            if (basis[i] < m) {
-                X[basis[i]] = A[i].back();
-            }
-        }
-        return std::tuple(0, A[n].back(), std::move(X));
+    if (val[n + 1][m] < -eps) {
+        //    No solution.
+        return vector<double>{};
     }
-};
+    vector<double> x(m - 1);
+    for (int i = m; i < n + m; ++i)
+        if (idx[i] < m - 1)
+            x[idx[i]] = val[i - m][m];
+    return x;
+}
