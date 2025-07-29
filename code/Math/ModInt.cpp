@@ -1,7 +1,7 @@
 template <u32 P = 998244353>
 struct ModInt {
     u32 v;
-    ModInt(i64 x = 0) { norm((x % P + P) % P); }
+    ModInt(i64 x = 0) { norm(x % P + P); }
     ModInt &norm(u32 x) {
         v = x < P ? x : x - P;
         return *this;
