@@ -27,7 +27,7 @@ struct ModInt {
     ModInt &operator/=(const ModInt &r) { return *this = *this / r; }
     bool operator==(const ModInt &r) const { return v == r.v; }
     explicit operator bool() const { return v != 0; }
-    friend ostream &operator<<(ostream &os, const ModInt &x) {
+    friend std::ostream &operator<<(std::ostream &os, const ModInt &x) {
         return os << x.v;
     }
 };
