@@ -11,7 +11,7 @@ constexpr T power(T a, u64 b, T res = 1) {
 template <u32 P = 998244353>
 struct ModInt {
     u32 v;
-    ModInt(i64 x = 0) { norm((x % P + P) % P); }
+    ModInt(i64 x = 0) { norm(x % P + P); }
     ModInt &norm(u32 x) {
         v = x < P ? x : x - P;
         return *this;
@@ -27,8 +27,8 @@ struct ModInt {
     ModInt &operator/=(const ModInt &r) { return *this = *this / r; }
     bool operator==(const ModInt &r) const { return v == r.v; }
     explicit operator bool() const { return v != 0; }
-    friend std::ostream &operator<<(std::ostream &os, const ModInt &x) {
-        return os << x.v;
+    friend std::ostream &operator<<(std::ostream &os, const ModInt &r) {
+        return os << r.v;
     }
 };
 
