@@ -20,3 +20,28 @@ inline void W(int n) {
     for (--p; p >= 0; --p) OB[OP++] = buf[p];
     if (OP > 65520) write(1, OB, OP), OP = 0;
 }
+
+// another FastIO
+char buf[1 << 21], *p1 = buf, *p2 = buf;
+inline char getc() {
+    return p1 == p2 && (p2 = (p1 = buf) + fread(buf, 1, 1 << 21, stdin), p1 == p2) ? 0 : *p1++;
+}
+template<typename T> void Cin(T &a) {
+    T res = 0; int f = 1;
+    char c = getc();
+    for (; c < '0' || c > '9'; c = getc()) {
+        if (c == '-') f = -1;
+    }
+    for (; c >= '0' && c <= '9'; c = getc()) {
+        res = res * 10 + c - '0';
+    }
+    a = f * res;
+}
+template<typename T, typename... Args> void Cin(T &a, Args &...args) {
+    Cin(a), Cin(args...);
+}
+template<typename T> void Cout(T x) { // there's no '\n' in output
+    if (x < 0) putchar('-'), x = -x;
+    if (x > 9) Cout(x / 10);
+    putchar(x % 10 + '0');
+}
