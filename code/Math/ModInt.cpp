@@ -1,3 +1,5 @@
+using u32 = unsigned int;
+using u64 = unsigned long long;
 template <class T>
 constexpr T power(T a, u64 b, T res = 1) {
     for (; b != 0; b /= 2, a *= a) {
@@ -11,6 +13,7 @@ constexpr T power(T a, u64 b, T res = 1) {
 template <u32 P = 998244353>
 struct ModInt {
     u32 v;
+    const static ModInt G;
     ModInt(i64 x = 0) { norm(x % P + P); }
     ModInt &norm(u32 x) {
         v = x < P ? x : x - P;
@@ -31,3 +34,5 @@ struct ModInt {
         return os << r.v;
     }
 };
+using mint = ModInt<998244353>;
+template<> const mint mint::G = mint(3);
