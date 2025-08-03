@@ -1,14 +1,19 @@
+
+std::mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+
 template <class mint>
-void nft(bool type, V<mint>& a) {
+void nft(bool type, std::vector<mint> &a) {
     int n = int(a.size()), s = 0;
-    while ((1 << s) < n) s++;
+    while ((1 << s) < n) {
+        s++;
+    }
     assert(1 << s == n);
-    static V<mint> ep, iep;
+    static std::vector<mint> ep, iep;
     while (int(ep.size()) <= s) {
-        ep.push_back(mint::G.pow(mint(-1).v / (1 << ep.size())));
+        ep.push_back(power(mint::G, mint(-1).v / (1 << int(ep.size()))));
         iep.push_back(ep.back().inv());
     }
-    V<mint> b(n);
+    std::vector<mint> b(n);
     for (int i = 1; i <= s; i++) {
         int w = 1 << (s - i);
         mint base = type ? iep[i] : ep[i], now = 1;
@@ -21,109 +26,136 @@ void nft(bool type, V<mint>& a) {
             }
             now *= base;
         }
-        swap(a, b);
+        std::swap(a, b);
     }
 }
 template <class mint>
-V<mint> multiply(const V<mint>& a, const V<mint>& b) {
+std::vector<mint> multiply(const std::vector<mint> &a, const std::vector<mint> &b) {
     int n = int(a.size()), m = int(b.size());
     if (!n || !m) return {};
-    if (min(n, m) <= 8) {
-        V<mint> ans(n + m - 1);
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];
+    if (std::min(n, m) <= 8) {
+        std::vector<mint> ans(n + m - 1);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                ans[i + j] += a[i] * b[j];
+            }
+        }
         return ans;
     }
     int lg = 0;
-    while ((1 << lg) < n + m - 1) lg++;
+    while ((1 << lg) < n + m - 1) {
+        lg++;
+    }
     int z = 1 << lg;
     auto a2 = a, b2 = b;
     a2.resize(z);
     b2.resize(z);
     nft(false, a2);
     nft(false, b2);
-    for (int i = 0; i < z; i++) a2[i] *= b2[i];
+    for (int i = 0; i < z; i++) {
+        a2[i] *= b2[i];
+    }
     nft(true, a2);
     a2.resize(n + m - 1);
     mint iz = mint(z).inv();
-    for (int i = 0; i < n + m - 1; i++) a2[i] *= iz;
+    for (int i = 0; i < n + m - 1; i++) {
+        a2[i] *= iz;
+    }
     return a2;
 }
 
 template <class D>
 struct Poly {
-    V<D> v;
-    Poly(const V<D>& _v = {}) : v(_v) { shrink(); }
+    std::vector<D> v;
+    Poly(const std::vector<D> &v_ = {}) : v(v_) { shrink(); }
     void shrink() {
-        while (v.size() && !v.back()) v.pop_back();
+        while (v.size() && !v.back()) {
+            v.pop_back();
+        }
     }
     int size() const { return int(v.size()); }
     D freq(int p) const { return (p < size()) ? v[p] : D(0); }
-    Poly operator+(const Poly& r) const {
-        auto n = max(size(), r.size());
-        V<D> res(n);
-        for (int i = 0; i < n; i++) res[i] = freq(i) + r.freq(i);
+    Poly operator+(const Poly &r) const {
+        auto n = std::max(size(), r.size());
+        std::vector<D> res(n);
+        for (int i = 0; i < n; i++) {
+            res[i] = freq(i) + r.freq(i);
+        }
         return res;
     }
-    Poly operator-(const Poly& r) const {
-        int n = max(size(), r.size());
-        V<D> res(n);
-        for (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);
+    Poly operator-(const Poly &r) const {
+        int n = std::max(size(), r.size());
+        std::vector<D> res(n);
+        for (int i = 0; i < n; i++) {
+            res[i] = freq(i) - r.freq(i);
+        }
         return res;
     }
-    Poly operator*(const Poly& r) const { return {multiply(v, r.v)}; }
-    Poly operator*(const D& r) const {
+    Poly operator*(const Poly &r) const { return {multiply(v, r.v)}; }
+    Poly operator*(const D &r) const {
         int n = size();
-        V<D> res(n);
-        for (int i = 0; i < n; i++) res[i] = v[i] * r;
+        std::vector<D> res(n);
+        for (int i = 0; i < n; i++) {
+            res[i] = v[i] * r;
+        }
         return res;
     }
-    Poly operator/(const D& r) const {
-        return *this * r.inv();
-    }
-    Poly operator/(const Poly& r) const {
+    Poly operator/(const D &r) const { return *this * r.inv(); }
+    Poly operator/(const Poly &r) const {
         if (size() < r.size()) return {{}};
         int n = size() - r.size() + 1;
         return (rev().pre(n) * r.rev().inv(n)).pre(n).rev();
     }
-    Poly operator%(const Poly& r) const { return *this - *this / r * r; }
+    Poly operator%(const Poly &r) const { return *this - *this / r * r; }
     Poly operator<<(int s) const {
-        V<D> res(size() + s);
-        for (int i = 0; i < size(); i++) res[i + s] = v[i];
+        std::vector<D> res(size() + s);
+        for (int i = 0; i < size(); i++) {
+            res[i + s] = v[i];
+        }
         return res;
     }
     Poly operator>>(int s) const {
-        if (size() <= s) return Poly();
-        V<D> res(size() - s);
-        for (int i = 0; i < size() - s; i++) res[i] = v[i + s];
+        if (size() <= s) {
+            return Poly();
+        }
+        std::vector<D> res(size() - s);
+        for (int i = 0; i < size() - s; i++) {
+            res[i] = v[i + s];
+        }
         return res;
     }
-    Poly& operator+=(const Poly& r) { return *this = *this + r; }
-    Poly& operator-=(const Poly& r) { return *this = *this - r; }
-    Poly& operator*=(const Poly& r) { return *this = *this * r; }
-    Poly& operator*=(const D& r) { return *this = *this * r; }
-    Poly& operator/=(const Poly& r) { return *this = *this / r; }
-    Poly& operator/=(const D& r) { return *this = *this / r; }
-    Poly& operator%=(const Poly& r) { return *this = *this % r; }
-    Poly& operator<<=(const size_t& n) { return *this = *this << n; }
-    Poly& operator>>=(const size_t& n) { return *this = *this >> n; }
+    Poly &operator+=(const Poly &r) { return *this = *this + r; }
+    Poly &operator-=(const Poly &r) { return *this = *this - r; }
+    Poly &operator*=(const Poly &r) { return *this = *this * r; }
+    Poly &operator*=(const D &r) { return *this = *this * r; }
+    Poly &operator/=(const Poly &r) { return *this = *this / r; }
+    Poly &operator/=(const D &r) { return *this = *this / r; }
+    Poly &operator%=(const Poly &r) { return *this = *this % r; }
+    Poly &operator<<=(const size_t &n) { return *this = *this << n; }
+    Poly &operator>>=(const size_t &n) { return *this = *this >> n; }
     Poly pre(int le) const {
-        return {{v.begin(), v.begin() + min(size(), le)}};
+        return {{v.begin(), v.begin() + std::min(size(), le)}};
     }
     Poly rev(int n = -1) const {
-        V<D> res = v;
-        if (n != -1) res.resize(n);
-        reverse(res.begin(), res.end());
+        std::vector<D> res = v;
+        if (n != -1) {
+            res.resize(n);
+        }
+        std::reverse(res.begin(), res.end());
         return res;
     }
     Poly diff() const {
-        V<D> res(max(0, size() - 1));
-        for (int i = 1; i < size(); i++) res[i - 1] = freq(i) * i;
+        std::vector<D> res(std::max(0, size() - 1));
+        for (int i = 1; i < size(); i++) {
+            res[i - 1] = freq(i) * i;
+        }
         return res;
     }
     Poly inte() const {
-        V<D> res(size() + 1);
-        for (int i = 0; i < size(); i++) res[i + 1] = freq(i) / (i + 1);
+        std::vector<D> res(size() + 1);
+        for (int i = 0; i < size(); i++) {
+            res[i + 1] = freq(i) / (i + 1);
+        }
         return res;
     }
     // f * f.inv() = 1 + g(x)x^m
@@ -159,21 +191,25 @@ struct Poly {
         }
         return g.pre(n + 1);
     }
-    Poly pow_mod(ll n, const Poly& mod) {
-        Poly x = *this, r = {{1}};
-        while (n) {
-            if (n & 1) r = r * x % mod;
-            x = x * x % mod;
-            n >>= 1;
+    Poly modpower(u64 n, const Poly &mod) {
+        Poly x = *this, res = {{1}};
+        for (; n; n /= 2, x = x * x % mod) {
+            if (n & 1) {
+                res = res * x % mod;
+            }
         }
-        return r;
+        return res;
     }
-    friend ostream& operator<<(ostream& os, const Poly& p) {
-        if (p.size() == 0) return os << "0";
+    friend std::ostream &operator<<(std::ostream &os, const Poly &p) {
+        if (p.size() == 0) {
+            return os << "0";
+        }
         for (auto i = 0; i < p.size(); i++) {
             if (p.v[i]) {
                 os << p.v[i] << "x^" << i;
-                if (i != p.size() - 1) os << "+";
+                if (i != p.size() - 1) {
+                    os << "+";
+                }
             }
         }
         return os;
@@ -181,49 +217,51 @@ struct Poly {
 };
 template <class mint>
 struct MultiEval {
-    using NP = MultiEval*;
+    using NP = MultiEval *;
     NP l, r;
-    V<mint> que;
     int sz;
     Poly<mint> mul;
-    MultiEval(const V<mint>& _que, int off, int _sz) : sz(_sz) {
+    std::vector<mint> que;
+    MultiEval(const std::vector<mint> &que_, int off, int sz_) : sz(sz_) {
         if (sz <= 100) {
-            que = {_que.begin() + off, _que.begin() + off + sz};
+            que = {que_.begin() + off, que_.begin() + off + sz};
             mul = {{1}};
-            for (auto x : que) mul *= {{-x, 1}};
+            for (auto x : que) {
+                mul *= {{-x, 1}};
+            }
             return;
         }
-        l = new MultiEval(_que, off, sz / 2);
-        r = new MultiEval(_que, off + sz / 2, sz - sz / 2);
+        l = new MultiEval(que_, off, sz / 2);
+        r = new MultiEval(que_, off + sz / 2, sz - sz / 2);
         mul = l->mul * r->mul;
     }
-    MultiEval(const V<mint>& _que) : MultiEval(_que, 0, int(_que.size())) {}
-    void query(const Poly<mint>& _pol, V<mint>& res) const {
+    MultiEval(const std::vector<mint> &que_) : MultiEval(que_, 0, int(que_.size())) {}
+    void query(const Poly<mint> &pol_, std::vector<mint> &res) const {
         if (sz <= 100) {
             for (auto x : que) {
                 mint sm = 0, base = 1;
-                for (int i = 0; i < _pol.size(); i++) {
-                    sm += base * _pol.freq(i);
+                for (int i = 0; i < pol_.size(); i++) {
+                    sm += base * pol_.freq(i);
                     base *= x;
                 }
                 res.push_back(sm);
             }
             return;
         }
-        auto pol = _pol % mul;
+        auto pol = pol_ % mul;
         l->query(pol, res);
         r->query(pol, res);
     }
-    V<mint> query(const Poly<mint>& pol) const {
-        V<mint> res;
+    std::vector<mint> query(const Poly<mint> &pol) const {
+        std::vector<mint> res;
         query(pol, res);
         return res;
     }
 };
 template <class mint>
-Poly<mint> berlekamp_massey(const V<mint>& s) {
+Poly<mint> berlekampMassey(const std::vector<mint> &s) {
     int n = int(s.size());
-    V<mint> b = {mint(-1)}, c = {mint(-1)};
+    std::vector<mint> b = {mint(-1)}, c = {mint(-1)};
     mint y = mint(1);
     for (int ed = 1; ed <= n; ed++) {
         int l = int(c.size()), m = int(b.size());
@@ -233,7 +271,9 @@ Poly<mint> berlekamp_massey(const V<mint>& s) {
         }
         b.push_back(0);
         m++;
-        if (!x) continue;
+        if (!x) {
+            continue;
+        }
         mint freq = x / y;
         if (l < m) {
             // use b
@@ -254,19 +294,21 @@ Poly<mint> berlekamp_massey(const V<mint>& s) {
     return c;
 }
 template <class E, class mint = decltype(E().f)>
-mint sparse_det(const VV<E>& g) {
+mint sparseDet(const std::vector<std::vector<E>> &g) {
     int n = int(g.size());
-    if (n == 0) return 1;
-    auto rand_v = [&]() {
-        V<mint> res(n);
+    if (n == 0) {
+        return 1;
+    }
+    auto randV = [&]() {
+        std::vector<mint> res(n);
         for (int i = 0; i < n; i++) {
-            res[i] = mint(rand_int(1, mint(-1).v));
+            res[i] = mint(std::uniform_int_distribution<i64>(1, mint(-1).v)(rng));  // need rng
         }
         return res;
     };
-    V<mint> c = rand_v(), l = rand_v(), r = rand_v();
+    std::vector<mint> c = randV(), l = randV(), r = randV();
     // l * mat * r
-    V<mint> buf(2 * n);
+    std::vector<mint> buf(2 * n);
     for (int fe = 0; fe < 2 * n; fe++) {
         for (int i = 0; i < n; i++) {
             buf[fe] += l[i] * r[i];
@@ -274,7 +316,7 @@ mint sparse_det(const VV<E>& g) {
         for (int i = 0; i < n; i++) {
             r[i] *= c[i];
         }
-        V<mint> tmp(n);
+        std::vector<mint> tmp(n);
         for (int i = 0; i < n; i++) {
             for (auto e : g[i]) {
                 tmp[i] += r[e.to] * e.f;
@@ -282,13 +324,20 @@ mint sparse_det(const VV<E>& g) {
         }
         r = tmp;
     }
-    auto u = berlekamp_massey(buf);
-    if (u.size() != n + 1) return sparse_det(g);
+    auto u = berlekampMassey(buf);
+    if (u.size() != n + 1) {
+        return sparseDet(g);
+    }
     auto acdet = u.freq(0) * mint(-1);
-    if (n % 2) acdet *= mint(-1);
-    if (!acdet) return 0;
+    if (n % 2) {
+        acdet *= mint(-1);
+    }
+    if (!acdet) {
+        return 0;
+    }
     mint cdet = 1;
-    for (int i = 0; i < n; i++) cdet *= c[i];
+    for (int i = 0; i < n; i++) {
+        cdet *= c[i];
+    }
     return acdet / cdet;
 }
-
