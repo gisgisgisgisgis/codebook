@@ -4,13 +4,13 @@
 vector<int> manacher(const string &tmp) { // 0-based
     string s = "%";
     int l = 0, r = 0;
-    for(char c : tmp) s += c, s += '%';
+    for (char c : tmp) s += c, s += '%';
     vector<int> z(ssize(s));
     for (int i = 0; i < ssize(s); i++) {
         z[i] = r > i ? min(z[2 * l - i], r - i) : 1;
         while (i - z[i] >= 0 && i + z[i] < ssize(s) && s[i + z[i]] == s[i - z[i]]) 
         ++z[i];
-        if(z[i] + i > r) r = z[i] + i, l = i;
+        if (z[i] + i > r) r = z[i] + i, l = i;
     }
     return z;
 }
