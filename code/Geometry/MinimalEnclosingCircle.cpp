@@ -1,3 +1,11 @@
+struct Cir {
+    Pt o;
+    double r;
+    bool inside(Pt p) {
+        return sgn(r - abs(p - o)) >= 0;
+    }
+};
+
 Pt Center(Pt a, Pt b, Pt c) {
     Pt x = (a + b) / 2;
     Pt y = (b + c) / 2;
