@@ -1,17 +1,17 @@
-struct Treap{
+struct Treap {
     Treap *l, *r;
     int key, size;
     Treap(int k) : l(nullptr), r(nullptr), key(k), size(1) {}
     void pull();
     void push() {};
 };
-inline int SZ(Treap *p){
+inline int SZ(Treap *p) {
     return p == nullptr ? 0 : p->size;
 }
 void Treap::pull() {
     size = 1 + SZ(l) + SZ(r);
 }
-Treap *merge(Treap *a, Treap *b){
+Treap *merge(Treap *a, Treap *b) {
     if (!a || !b) return a ? a : b;
     if (rand() % (SZ(a) + SZ(b)) < SZ(a)) {
         return a->push(), a->r = merge(a->r, b), a->pull(), a;
