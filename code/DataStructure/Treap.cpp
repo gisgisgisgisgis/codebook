@@ -5,15 +5,12 @@ struct Treap{
     void pull();
     void push() {};
 };
-
 inline int SZ(Treap *p){
     return p == nullptr ? 0 : p->size;
 }
-
 void Treap::pull() {
     size = 1 + SZ(l) + SZ(r);
 }
-
 Treap *merge(Treap *a, Treap *b){
     if (!a || !b) return a ? a : b;
     if (rand() % (SZ(a) + SZ(b)) < SZ(a)) {
@@ -42,14 +39,12 @@ void split2(Treap *p, Treap *&a, Treap *&b, int k) { // by size
     }
     p->pull();
 }
-
 void insert(Treap *&p, int k) {
     Treap *l, *r;
     p->push(), split(p, l, r, k);
     p = merge(merge(l, new Treap(k)), r);
     p->pull();
 }
-
 bool erase(Treap *&p, int k) {
     if (!p) return false;
     if (p->key == k) {
@@ -61,19 +56,17 @@ bool erase(Treap *&p, int k) {
     Treap *&t = k < p->key ? p->l : p->r;
     return erase(t, k) ? p->pull(), true : false;
 }
-
-int Rank(Treap *p, int k) {
+int Rank(Treap *p, int k) { // # of key < k
     if (!p) return 0;
     if (p->key < k) return SZ(p->l) + 1 + Rank(p->r, k);
     return Rank(p->l, k);
 }
-
-Treap *kth(Treap *p, int k) {
+Treap *kth(Treap *p, int k) { // 1-base
     if (k <= SZ(p->l)) return kth(p->l, k);
     if (k == SZ(p->l) + 1) return p;
     return kth(p->r, k - SZ(p->l) - 1);
 }
-
+// pref: kth(Rank(x)), succ: kth(Rank(x+1)+1)
 tuple<Treap*, Treap*, Treap*> interval(Treap *&o, int l, int r) { // 1-based
     Treap *a, *b, *c; // b: [l, r]
     split2(o, a, b, l - 1), split2(b, b, c, r - l + 1);
