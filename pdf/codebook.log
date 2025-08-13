@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  13 AUG 2025 20:23
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  13 AUG 2025 20:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,10 +701,10 @@ LaTeX Font Warning: Font shape `TU/FiraCode(0)/m/it' undefined
 (Font)              using `TU/FiraCode(0)/m/n' instead on input line 1.
 
 
-
-
 LaTeX Font Warning: Font shape `TU/FiraCode(0)/b/n' undefined
 (Font)              using `TU/FiraCode(0)/m/n' instead on input line 2.
+
+
 
 ) (../code/Basic/run) (../code/Basic/tem.cpp) (../code/Basic/debug.cpp
 
@@ -946,19 +946,13 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `codebook.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `codebook.out':
-(rerunfilecheck)             Before: 6EEAFB7E1C868B180492F2B2F487309B;9659
-(rerunfilecheck)             After:  D447CF5DAB9BA4F8198F66D915883823;9556.
+Package rerunfilecheck Info: File `codebook.out' has not changed.
+(rerunfilecheck)             Checksum: D447CF5DAB9BA4F8198F66D915883823;9556.
  ) 
 Here is how much of TeX's memory you used:
  18003 strings out of 409029
  349677 string characters out of 5756944
- 2471603 words of memory out of 5000000
+ 2470603 words of memory out of 5000000
  40265 multiletter control sequences out of 15000+600000
  560486 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
