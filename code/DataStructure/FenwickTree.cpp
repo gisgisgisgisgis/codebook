@@ -18,7 +18,7 @@ struct Fenwick {
     T qry(int l, int r) { // sum [l, r)
         return qry(r - 1) - qry(l - 1);
     }
-    pair<int, T> select(T k) { // first position >= k
+    pair<int, T> select(T k) { // [first position >= k, sum [0, p) 
         T s{};
         int p = 0;
         for (int i = 1 << __lg(n); i; i >>= 1) {
