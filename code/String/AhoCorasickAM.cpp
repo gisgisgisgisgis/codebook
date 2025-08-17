@@ -1,7 +1,7 @@
 struct ACM {
     int idx = 0;
     vector<array<int, 26>> tr;
-    vector<int> cnt, fail, id;
+    vector<int> cnt, fail;
     
     void clear() {
         tr.resize(1, array<int, 26>{});
@@ -20,9 +20,8 @@ struct ACM {
         return ++idx;
     }
  
-    void insert(string &s, int i) {
+    void insert(string &s) {
         int u = 0;
-        id.push_back(i);
         for (char c : s) {
             c -= 'a';
             if (tr[u][c] == 0) tr[u][c] = newnode();
