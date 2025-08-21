@@ -1,6 +1,6 @@
 ull modmul(ull a, ull b, ull M) {
-    int ret = a * b - M * ull(1.L / M * a * b);
-    return ret + M * (ret < 0) - M * (ret >= (int)M);
+    i64 ret = a * b - M * ull(1.L / M * a * b);
+    return ret + M * (ret < 0) - M * (ret >= (i64)M);
 }
 
 ull modpow(ull b, ull e, ull mod) {
