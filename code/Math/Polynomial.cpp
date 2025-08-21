@@ -64,6 +64,7 @@ std::vector<mint> multiply(const std::vector<mint> &a, const std::vector<mint> &
     return a2;
 }
 
+// access term x with poly.freq(x) 
 template <class D>
 struct Poly {
     std::vector<D> v;
@@ -159,14 +160,14 @@ struct Poly {
         return res;
     }
     // f * f.inv() = 1 + g(x)x^m
-    Poly inv(int m) const {
+    Poly inv(int m) const { // a[0] != 0
         Poly res = Poly({D(1) / freq(0)});
         for (int i = 1; i < m; i *= 2) {
             res = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);
         }
         return res.pre(m);
     }
-    Poly exp(int n) const {
+    Poly exp(int n) const { // a[0] = 0
         assert(freq(0) == 0);
         Poly f({1}), g({1});
         for (int i = 1; i < n; i *= 2) {
@@ -177,10 +178,24 @@ struct Poly {
         }
         return f.pre(n);
     }
-    Poly log(int n) const {
+    Poly log(int n) const { // a[0] = 1
         assert(freq(0) == 1);
         auto f = pre(n);
         return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();
+    }
+    Poly pow(int n, i64 k) const {
+        int m = 0;
+        while (m < n && freq(m) == 0) m++;
+        Poly f(vector<D>(n, 0));
+        if (k && m && (k >= n || k * m >= n)) return f;
+        f.v.resize(n);
+        if (m == n) return f.v[0] = 1, f;
+        int le = m * k;
+        Poly g({v.begin() + m, v.end()});
+        D base = power<D>(g.freq(0), k), inv = g.freq(0).inv();
+        g = ((g * inv).log(n - m) * D(k)).exp(n - m);
+        for (int i = le; i < n; i++) f.v[i] = g.freq(i - le) * base;
+        return f;
     }
     Poly sqrt(int n) const {
         assert(freq(0) == 1);
