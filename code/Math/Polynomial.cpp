@@ -1,4 +1,3 @@
-
 std::mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 
 template <class mint>
@@ -64,13 +63,12 @@ std::vector<mint> multiply(const std::vector<mint> &a, const std::vector<mint> &
     return a2;
 }
 
-// access term x with poly.freq(x) 
 template <class D>
 struct Poly {
     std::vector<D> v;
     Poly(const std::vector<D> &v_ = {}) : v(v_) { shrink(); }
     void shrink() {
-        while (v.size() && !v.back()) {
+        while (v.size() > 1 && !v.back()) {
             v.pop_back();
         }
     }
@@ -160,14 +158,14 @@ struct Poly {
         return res;
     }
     // f * f.inv() = 1 + g(x)x^m
-    Poly inv(int m) const { // a[0] != 0
+    Poly inv(int m) const {
         Poly res = Poly({D(1) / freq(0)});
         for (int i = 1; i < m; i *= 2) {
             res = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);
         }
         return res.pre(m);
     }
-    Poly exp(int n) const { // a[0] = 0
+    Poly exp(int n) const {
         assert(freq(0) == 0);
         Poly f({1}), g({1});
         for (int i = 1; i < n; i *= 2) {
@@ -178,7 +176,7 @@ struct Poly {
         }
         return f.pre(n);
     }
-    Poly log(int n) const { // a[0] = 1
+    Poly log(int n) const {
         assert(freq(0) == 1);
         auto f = pre(n);
         return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();
@@ -186,7 +184,7 @@ struct Poly {
     Poly pow(int n, i64 k) const {
         int m = 0;
         while (m < n && freq(m) == 0) m++;
-        Poly f(vector<D>(n, 0));
+        Poly f(std::vector<D>(n, 0));
         if (k && m && (k >= n || k * m >= n)) return f;
         f.v.resize(n);
         if (m == n) return f.v[0] = 1, f;
@@ -197,14 +195,27 @@ struct Poly {
         for (int i = le; i < n; i++) f.v[i] = g.freq(i - le) * base;
         return f;
     }
-    Poly sqrt(int n) const {
-        assert(freq(0) == 1);
+    Poly Getsqrt(int n) const {
+        if (size() == 0) return {{0}};
+        int z = QuadraticResidue(freq(0).v, 998244353);
+        if (z == -1) return Poly{};
         Poly f = pre(n + 1);
-        Poly g({1});
+        Poly g({z});
         for (int i = 1; i < n; i *= 2) {
             g = (g + f.pre(2 * i) * g.inv(2 * i)) / 2;
         }
         return g.pre(n + 1);
+    }
+    Poly sqrt(int n) const {
+        int m = 0;
+        while (m < n && freq(m) == 0) m++;
+        if (m == n) return {{0}};
+        if (m & 1) return Poly{};
+        Poly s = Poly(std::vector<D>(v.begin() + m, v.end())).Getsqrt(n);
+        if (s.size() == 0) return Poly{};
+        std::vector<D> res(n);
+        for (int i = 0; i + m / 2 < n; i++) res[i + m / 2] = s.freq(i);
+        return Poly(res);
     }
     Poly modpower(u64 n, const Poly &mod) {
         Poly x = *this, res = {{1}};
