@@ -3,7 +3,7 @@
 \setlength{\columnsep}{10pt}                                                                    %兩欄模式的間距
 \setlength{\columnseprule}{0pt}                                                                %兩欄模式間格線粗細
 
-\usepackage{amsthm}								%定義，例題
+\usepackage{amsthm}								  %定義，例題
 \usepackage{amssymb}
 %\usepackage[margin=2cm]{geometry}
 \usepackage{fontspec}								%設定字體
@@ -15,7 +15,7 @@
 \usepackage{graphicx}								%Graphic
 \usepackage{enumerate}
 \usepackage{changepage}
-\usepackage[compact]{titlesec}    %compact mode for reducing margin
+\usepackage[compact]{titlesec}      %compact mode for reducing margin
 \usepackage{amsmath}
 \usepackage[CheckSingle, CJKmath]{xeCJK}
 \usepackage{hyperref}
@@ -78,24 +78,24 @@
 \lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
 \@empty\z@\@empty
 \makeatother
-\lstset{											% Code顯示
-language=C++,										% the language of the code
-basicstyle=\scriptsize\ttfamily, 						% the size of the fonts that are used for the code
-%numbers=left,										% where to put the line-numbers
-numberstyle=\footnotesize,						% the size of the fonts that are used for the line-numbers
-stepnumber=1,										% the step between two line-numbers. If it's 1, each line  will be numbered
-numbersep=5pt,										% how far the line-numbers are from the code
-backgroundcolor=\color{white},					% choose the background color. You must add \usepackage{color}
-showspaces=false,									% show spaces adding particular underscores
-showstringspaces=false,							% underline spaces within strings
-showtabs=false,									% show tabs within strings adding particular underscores
-frame=false,											% adds a frame around the code
-tabsize=2,											% sets default tabsize to 2 spaces
-captionpos=b,										% sets the caption-position to bottom
-breaklines=true,									% sets automatic line breaking
-breakatwhitespace=false,							% sets if automatic breaks should only happen at whitespace
-escapeinside={\%*}{*)},							% if you want to add a comment within your code
-morekeywords={*},									% if you want to add more keywords to the set
+\lstset{											     % Code顯示
+language=C++,										   % the language of the code
+basicstyle=\scriptsize\ttfamily, 	 % the size of the fonts that are used for the code
+%numbers=left,										 % where to put the line-numbers
+numberstyle=\footnotesize,				 % the size of the fonts that are used for the line-numbers
+stepnumber=1,										   % the step between two line-numbers. If it's 1, each line  will be numbered
+numbersep=5pt,										 % how far the line-numbers are from the code
+backgroundcolor=\color{white},     % choose the background color. You must add \usepackage{color}
+showspaces=false,									 % show spaces adding particular underscores
+showstringspaces=false,						 % underline spaces within strings
+showtabs=false,									   % show tabs within strings adding particular underscores
+frame=false,											 % adds a frame around the code
+tabsize=2,											   % sets default tabsize to 2 spaces
+captionpos=b,										   % sets the caption-position to bottom
+breaklines=true,									 % sets automatic line breaking
+breakatwhitespace=false,					 % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)},						 % if you want to add a comment within your code
+morekeywords={*},									 % if you want to add more keywords to the set
 keywordstyle=\bfseries\color{Blue1},
 commentstyle=\itshape\color{Red4},
 stringstyle=\itshape\color{Green4},
@@ -158,12 +158,16 @@ literate={\ \ }{{\ }}1
 \includecode{FastIO}{../code/Misc/FastIO.cpp}
 \includecode{stress.sh}{../code/Misc/stress.sh}
 \includecode{Timer}{../code/Misc/Timer.cpp}
+\includecode{MinPlusConvolution}{../code/Misc/Min_Plus_Convolution.cpp}
+\includecode{PyTrick}{../code/Misc/PyTrick.py}
 
 \sectiontitle{Data Structure}
 \includecode{Fenwick Tree}{../code/DataStructure/FenwickTree.cpp}
 \includecode{Li Chao}{../code/DataStructure/LiChao.cpp}
 \includecode{PBDS}{../code/DataStructure/PBDS.cpp}
+\includecode{ODT}{../code/DataStructure/ODT.cpp}
 \includecode{Sparse Table}{../code/DataStructure/SparseTable.cpp}
+\includecode{Splay}{../code/DataStructure/SplayTree.cpp}
 \includecode{Treap}{../code/DataStructure/Treap.cpp}
 
 \sectiontitle{Matching and Flow}
@@ -222,7 +226,10 @@ literate={\ \ }{{\ }}1
 \includecode{Primitive Root}{../code/Math/PrimitiveRoot.cpp}
 \includecode{Simplex}{../code/Math/Simplex.cpp}
 \includecode{Sqrt Mod}{../code/Math/SqrtMod.cpp}
+\includecode{PiCount}{../code/Math/PiCount.cpp}
+\includecode{ModMin}{../code/Math/ModMin.cpp}
 \includecode{FFT}{../code/Math/FFT.cpp}
+\includecode{NTT prime}{../code/Math/NTTprime.tex}
 \includecode{Polynomial}{../code/Math/Polynomial.cpp}
 \includetex{Theorem}{../code/Math/Theorem.tex}
 
