@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  24 AUG 2025 17:22
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  25 AUG 2025 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -672,24 +672,13 @@ Package hyperref Info: Link coloring OFF on input line 111.
 \@outlinefile=\write3
 \openout3 = `codebook.out'.
 
- (codebook.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
-
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+ (codebook.toc)
 \tf@toc=\write4
 \openout4 = `codebook.toc'.
 
-
-
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 149.
+
 
 Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 (xeCJK)                
@@ -705,7 +694,11 @@ LaTeX Font Warning: Font shape `TU/FiraCode(0)/m/it' undefined
 LaTeX Font Warning: Font shape `TU/FiraCode(0)/b/n' undefined
 (Font)              using `TU/FiraCode(0)/m/n' instead on input line 2.
 
-) (../code/Basic/run) (../code/Basic/tem.cpp) (../code/Basic/debug.cpp
+) (../code/Basic/run) (../code/Basic/tem.cpp) (../code/Basic/debug.cpp)
+(../code/Basic/run.bat) (../code/Basic/random.cpp
+
+) (../code/Basic/TempleHash.sh) (../code/Misc/FastIO.cpp)
+(../code/Misc/stress.sh
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -714,150 +707,162 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [1
 
-]) (../code/Basic/run.bat) (../code/Basic/random.cpp)
-(../code/Basic/TempleHash.sh) (../code/Misc/FastIO.cpp
-
-) (../code/Misc/stress.sh) (../code/Misc/Timer.cpp)
+]) (../code/Misc/stress.bat) (../code/Misc/Timer.cpp)
 (../code/Misc/Min_Plus_Convolution.cpp) (../code/Misc/PyTrick.py
 
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[2]) (../code/DataStructure/FenwickTree.cpp) (../code/DataStructure/LiChao.cpp
-
-) (../code/DataStructure/PBDS.cpp) (../code/DataStructure/ODT.cpp)
+) (../code/DataStructure/FenwickTree.cpp) (../code/DataStructure/LiChao.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[3] (../code/DataStructure/SparseTable.cpp)
-(../code/DataStructure/SplayTree.cpp
+[2]) (../code/DataStructure/PBDS.cpp) (../code/DataStructure/ODT.cpp)
+(../code/DataStructure/SparseTable.cpp
 
-) (../code/DataStructure/Treap.cpp
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[4]) (../code/Flow/Dinic.cpp
-
-) (../code/Flow/GeneralMatching.cpp) (../code/Flow/KM.cpp
+) (../code/DataStructure/SplayTree.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[5]) (../code/Flow/MCMF.cpp
+[3]) (../code/DataStructure/Treap.cpp
 
-) (../code/Flow/Model.tex
+) (../code/Flow/Dinic.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[6]) (../code/Geometry/Point.cpp) (../code/Geometry/Line.cpp)
+[4]) (../code/Flow/GeneralMatching.cpp) (../code/Flow/KM.cpp
+
+) (../code/Flow/MCMF.cpp
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[5]) (../code/Flow/Model.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+
+(../code/Geometry/Point.cpp) (../code/Geometry/Line.cpp)
 (../code/Geometry/Circle.cpp) (../code/Geometry/PointToSegmentDistance.cpp)
+(../code/Geometry/PointInPoly.cpp
 
-(../code/Geometry/PointInPoly.cpp) (../code/Geometry/IntersectionOfLine.cpp)
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[6]) (../code/Geometry/IntersectionOfLine.cpp)
 (../code/Geometry/IntersectionOfCircles.cpp)
 (../code/Geometry/IntersectionOfCircleLine.cpp)
-(../code/Geometry/AreaOfCirclePolygon.cpp)
+(../code/Geometry/AreaOfCirclePolygon.cpp) (../code/Geometry/ConvexHull.cpp
+
+) (../code/Geometry/ConvexTrick.cpp)
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[7] (../code/Geometry/ConvexHull.cpp) (../code/Geometry/ConvexTrick.cpp
-
-) (../code/Geometry/HalfPlaneIntersection.cpp)
+[7] (../code/Geometry/HalfPlaneIntersection.cpp)
 (../code/Geometry/MinimalEnclosingCircle.cpp) (../code/Geometry/Minkowski.cpp
 
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[8]) (../code/Geometry/PointInCircumcircle.cpp)
+) (../code/Geometry/PointInCircumcircle.cpp)
 (../code/Geometry/TangentLinesOfCirclePoint.cpp)
 (../code/Geometry/TangentLinesOfCircles.cpp)
 (../code/Geometry/TriangleCenter.cpp
 
-) (../code/Geometry/UnionOfCircles.cpp) (../code/Graph/BlockCutTree.cpp
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[8]) (../code/Geometry/UnionOfCircles.cpp) (../code/Graph/BlockCutTree.cpp
+
+) (../code/Graph/CountCycles.cpp) (../code/Graph/DominatorTree.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[9]) (../code/Graph/CountCycles.cpp) (../code/Graph/DominatorTree.cpp
+[9]) (../code/Graph/EnumeratePlanarFace.cpp) (../code/Graph/ManhattanMST.cpp
 
-) (../code/Graph/EnumeratePlanarFace.cpp
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[10]) (../code/Graph/ManhattanMST.cpp) (../code/Graph/MatroidIntersection.cpp
-
-) (../code/Graph/MaxClique.cpp) (../code/Graph/TreeHash.cpp
+) (../code/Graph/MatroidIntersection.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[11]) (../code/Graph/TwoSAT.cpp
+[10]) (../code/Graph/MaxClique.cpp) (../code/Graph/TreeHash.cpp
 
-) (../code/Graph/VirtualTree.cpp) (../code/Math/Combinatoric.cpp)
+) (../code/Graph/TwoSAT.cpp
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[11]) (../code/Graph/VirtualTree.cpp) (../code/Math/Combinatoric.cpp)
 (../code/Math/DiscreteLog.cpp
 
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[12]) (../code/Math/DivFloorCeil.cpp) (../code/Math/exCRT.cpp
-
-) (../code/Math/Factorization.cpp) (../code/Math/FloorSum.cpp)
-(../code/Math/FWT.cpp
+) (../code/Math/DivFloorCeil.cpp) (../code/Math/exCRT.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[13]) (../code/Math/GaussElimination.cpp
+[12]) (../code/Math/Factorization.cpp) (../code/Math/FloorSum.cpp)
+(../code/Math/FWT.cpp)
 
-) (../code/Math/LagrageInterpolation.cpp) (../code/Math/LinearSieve.cpp)
-(../code/Math/Lucas.cpp
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[14]) (../code/Math/ModInt.cpp
-
-) (../code/Math/PrimitiveRoot.cpp) (../code/Math/Simplex.cpp
+(../code/Math/GaussElimination.cpp) (../code/Math/LagrageInterpolation.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[15]) (../code/Math/SqrtMod.cpp) (../code/Math/PiCount.cpp
+[13]) (../code/Math/LinearSieve.cpp) (../code/Math/Lucas.cpp
 
-) (../code/Math/ModMin.cpp) (../code/Math/FFT.cpp) (../code/Math/NTTprime.tex)
-(../code/Math/Polynomial.cpp
+) (../code/Math/ModInt.cpp) (../code/Math/PrimitiveRoot.cpp
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[14]) (../code/Math/Simplex.cpp)
+
+(../code/Math/SqrtMod.cpp) (../code/Math/PiCount.cpp
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[15]) (../code/Math/ModMin.cpp) (../code/Math/FFT.cpp)
+(../code/Math/NTTprime.tex) (../code/Math/Polynomial.cpp
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -865,6 +870,9 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
 [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -881,8 +889,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+) (../code/Math/Theorem.tex
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 12.
 
 
 
@@ -891,14 +902,7 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[18]) (../code/Math/Theorem.tex
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 12.
-
-
-
+[18]
 Missing character: There is no ő in font [./fonts/PingFang/PingFangTC-Regular.o
 tf]/OT:script=latn;language=dflt;mapping=tex-text;!
 
@@ -910,55 +914,55 @@ Underfull \hbox (badness 3229) in paragraph at lines 53--55
 Missing character: There is no ő in font [./fonts/PingFang/PingFangTC-Regular.o
 tf]/OT:script=latn;language=dflt;mapping=tex-text;!
 
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[19]
 Underfull \hbox (badness 3039) in paragraph at lines 100--102
 \TU/PingFangTC(0)/m/n/7 Given a degree sequence $\OML/cmm/m/it/7 d[]; [] ; d[]$
  \TU/PingFangTC(0)/m/n/7 of a labeled tree, there are
  []
 
+
+
 ) (../code/String/AhoCorasickAM.cpp
 
-) (../code/String/DoubleString.cpp) (../code/String/LyndonFactorization.cpp)
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[19]) (../code/String/DoubleString.cpp) (../code/String/LyndonFactorization.cpp
+) (../code/String/Manacher.cpp
+
+) (../code/String/SAIS.cpp) (../code/String/SuffixArray.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[20] (../code/String/Manacher.cpp) (../code/String/SAIS.cpp)
+[20]) (../code/String/Zvalue.cpp) (../code/Math/LinearSol.cpp)
+(../code/Math/NTT.cpp
 
-(../code/String/SuffixArray.cpp) (../code/String/Zvalue.cpp)
+)
 
+! Package Listings Error: File `../code?Misc/FractionSearch(.cpp)' not found.
 
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cpp)
 
-[21] (codebook.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2022/08/05>
- ***********
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.249 ...nSearch}{../code?Misc/FractionSearch.cpp}
+                                                  ^^M
+*** (cannot \read from terminal in nonstop modes)
 
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `codebook.out' has not changed.
-(rerunfilecheck)             Checksum: D4B08588A063E4195236F4C57456652E;10243.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 18172 strings out of 409029
- 352284 string characters out of 5756944
- 2461603 words of memory out of 5000000
- 40412 multiletter control sequences out of 15000+600000
+ 18213 strings out of 409029
+ 352986 string characters out of 5756944
+ 2522603 words of memory out of 5000000
+ 40447 multiletter control sequences out of 15000+600000
  560486 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,547b,1743s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on codebook.pdf (21 pages).
+Output written on codebook.pdf (20 pages).
