@@ -4,7 +4,7 @@ void FFT(vector<C> &P, C w, bool inv = 0) {
     assert(__builtin_popcount(n) == 1);
 
     for (int j = 1, i = 0; j < n - 1; ++j) {
-        for (int k = n >> 1; k > (i ^= k); k >>= 1);
+        for (int k = n >> 1; k > (i ^= k); k >>= 1); // !!!
         if (j < i) swap(P[i], P[j]);
     }
 
