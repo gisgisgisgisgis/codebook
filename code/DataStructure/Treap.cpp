@@ -72,3 +72,15 @@ tuple<Treap*, Treap*, Treap*> interval(Treap *&o, int l, int r) { // 1-based
     split2(o, a, b, l - 1), split2(b, b, c, r - l + 1);
     return make_tuple(a, b, c);
 }
+// need record fa
+int get_pos(Treap *p) {
+    if (!p) return 0;
+    int sz = SZ(p->l) + 1;
+    while (p->fa) {
+        if (p->fa->r == p) {
+            sz += SZ(p->fa->l) + 1;
+        }
+        p = p->fa;
+    }
+    return sz;
+}
