@@ -19,7 +19,6 @@ auto gauss(Matrix &A, std::vector<T> &b, int n, int m) {
     assert(ssize(b) == n);
     int r = 0;
     std::vector<int> where(m, -1);
-
     for (int i = 0; i < m && r < n; i++) {
         int p = r;  // pivot
         while (p < n && A[p][i] == T(0)) {
@@ -52,7 +51,6 @@ auto gauss(Matrix &A, std::vector<T> &b, int n, int m) {
         //         b[j] ^= b[r];
         //     }
         // }
-
         r++;
     }
     for (int i = r; i < n; i++) {
