@@ -14,7 +14,7 @@ i64 exgcd(i64 a, i64 b, i64 &x, i64 &y) {
 // x: first non-negative solution, T: minimum period
 std::pair<i64, i64> exCRT(auto &a, auto &b) {
     auto [m1, r1] = std::tie(a[0], b[0]);
-    for (int i = 1; i < std::ssize(a); i++) {
+    for (int i = 1; i < ssize(a); i++) {
         auto [m2, r2] = std::tie(a[i], b[i]);
         i64 x, y;
         i64 g = exgcd(m1, m2, x, y);
