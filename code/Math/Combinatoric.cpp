@@ -21,3 +21,9 @@ inline mint H(int n, int m) {
 inline mint catalan(int n){
     return fac[2 * n] * inv[n + 1] * inv[n];
 }
+
+inline mint excatalan(int n, int m, int k) {
+    if (k > m) return Comb(n + m, m);
+    if (k > m - n) return Comb(n + m, m) - Comb(n + m, m - k);
+    return 0;
+}
