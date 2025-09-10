@@ -1,6 +1,6 @@
 vector<mint> fac, inv;
 
-inline void init (int n) {
+inline void init(int n) {
     fac.resize(n + 1);
     inv.resize(n + 1);
     fac[0] = inv[0] = 1;
