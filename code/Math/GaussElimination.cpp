@@ -1,13 +1,3 @@
-template <class T>
-constexpr T power(T a, u64 b, T res = 1) {
-    for (; b != 0; b /= 2, a *= a) {
-        if (b & 1) {
-            res *= a;
-        }
-    }
-    return res;
-}
-
 using Z = ModInt<998244353>;
 // using F = long double;
 using Matrix = std::vector<std::vector<Z>>;
