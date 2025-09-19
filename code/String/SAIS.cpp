@@ -36,7 +36,7 @@ auto sais(const auto &s) {
     for (auto x = c; int y : nsa | views::reverse)
         y = lms[y], sa[--x[s[y]]] = y;
     return induce(), sa;
-}
+} // 1
 // sa[i]: sa[i]-th suffix is the
 // i-th lexicographically smallest suffix.
 // lcp[i]: LCP of suffix sa[i] and suffix sa[i + 1].
@@ -57,4 +57,4 @@ struct Suffix {
             lcp[rk[i] - 1] = h ? h-- : 0;
         }
     }
-};
+}; // 2
