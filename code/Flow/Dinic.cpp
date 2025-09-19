@@ -8,8 +8,8 @@ struct Dinic {
     vector<T> dis, it;
     Dinic(int n) : adj(n), dis(n), it(n) {}
     void add_edge(int u, int v, T c) {
-        adj[u].pb({v, adj[v].size(), c});
-        adj[v].pb({u, adj[u].size() - 1, 0});
+        adj[u].push_back({v, adj[v].size(), c});
+        adj[v].push_back({u, adj[u].size() - 1, 0});
     }
     bool bfs(int s, int t) {
         fill(all(dis), INF);
