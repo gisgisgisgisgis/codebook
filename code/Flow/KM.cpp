@@ -1,4 +1,3 @@
-
 template<class T>
 T KM(const vector<vector<T>> &w) {
     const T INF = numeric_limits<T>::max() / 2;

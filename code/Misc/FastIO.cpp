@@ -20,6 +20,7 @@ inline void W(int n) {
     for (--p; p >= 0; --p) OB[OP++] = buf[p];
     if (OP > 65520) write(1, OB, OP), OP = 0;
 }
+// {b95f3b}
 
 // another FastIO
 char buf[1 << 21], *p1 = buf, *p2 = buf;
@@ -45,3 +46,4 @@ template<typename T> void Cout(T x) { // there's no '\n' in output
     if (x > 9) Cout(x / 10);
     putchar(x % 10 + '0');
 }
+// {795778}

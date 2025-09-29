@@ -4,11 +4,11 @@ bool isInter(Line l, Line m) {
         return true;
     return PtSide(m.a, l) * PtSide(m.b, l) < 0 and
            PtSide(l.a, m) * PtSide(l.b, m) < 0;
-}
+} // [19282c]
 Pt LineInter(Line l, Line m) {
     double s = ori(m.a, m.b, l.a), t = ori(m.a, m.b, l.b);
     return (l.b * s - l.a * t) / (s - t);
-}
+} // [0f777a]
 bool strictInter(Line l, Line m) {
     int la = PtSide(m.a, l);
     int lb = PtSide(m.b, l);

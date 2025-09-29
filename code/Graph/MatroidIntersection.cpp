@@ -38,7 +38,7 @@ while (true) {
             int u = q.front(); q.pop();
             // vis[u] = 0;
             for (int v : adj[u]) {
-                int w = ; // no weight -> 1
+                int w = ; // no weight -> 1, v == t -> 0
                 if (chmin(dis[v], dis[u] + w)) {
                     from[v] = u;
                     // if (!vis[v]) {

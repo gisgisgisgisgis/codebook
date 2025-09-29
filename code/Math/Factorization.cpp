@@ -21,7 +21,7 @@ bool isPrime(ull n) {
         if (p != n - 1 && i != s) return 0;
     }
     return 1;
-}
+} // [94d8b8]
  
 ull pollard(ull n) {
     uniform_int_distribution<ull> unif(0, n - 1);
@@ -34,7 +34,7 @@ ull pollard(ull n) {
         x = f(x), y = f(f(y));
     }
     return __gcd(prd, n);
-}
+} // [6a1cda]
 
 vector<ull> factor(ull n) {
     if (n == 1) return {};

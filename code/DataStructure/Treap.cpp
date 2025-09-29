@@ -17,7 +17,7 @@ Treap *merge(Treap *a, Treap *b) {
         return a->push(), a->r = merge(a->r, b), a->pull(), a;
     }
     return b->push(), b->l = merge(a, b->l), b->pull(), b;
-}
+} // [98da40]
 // <= k, > k
 void split(Treap *p, Treap *&a, Treap *&b, int k) { // by key
     if (!p) return a = b = nullptr, void();
@@ -27,7 +27,7 @@ void split(Treap *p, Treap *&a, Treap *&b, int k) { // by key
     } else {
         b = p, split(p->l, a, b->l, k), b->pull();
     }
-}
+} // [6bb6f4]
 // k, n - k
 void split2(Treap *p, Treap *&a, Treap *&b, int k) { // by size
     if (!p) return a = b = nullptr, void();
@@ -38,7 +38,7 @@ void split2(Treap *p, Treap *&a, Treap *&b, int k) { // by size
         b = p, split2(p->l, a, b->l, k);
     }
     p->pull();
-}
+} // [758990]
 void insert(Treap *&p, int k) {
     Treap *l, *r;
     p->push(), split(p, l, r, k);
@@ -55,7 +55,7 @@ bool erase(Treap *&p, int k) {
     } 
     Treap *&t = k < p->key ? p->l : p->r;
     return erase(t, k) ? p->pull(), true : false;
-}
+} // [300206]
 int Rank(Treap *p, int k) { // # of key < k
     if (!p) return 0;
     if (p->key < k) return SZ(p->l) + 1 + Rank(p->r, k);
@@ -65,13 +65,13 @@ Treap *kth(Treap *p, int k) { // 1-base
     if (k <= SZ(p->l)) return kth(p->l, k);
     if (k == SZ(p->l) + 1) return p;
     return kth(p->r, k - SZ(p->l) - 1);
-}
+} // [d1db1c]
 // pref: kth(Rank(x)), succ: kth(Rank(x+1)+1)
 tuple<Treap*, Treap*, Treap*> interval(Treap *&o, int l, int r) { // 1-based
     Treap *a, *b, *c; // b: [l, r]
     split2(o, a, b, l - 1), split2(b, b, c, r - l + 1);
     return make_tuple(a, b, c);
-}
+} // {f2fff2}
 // need record fa
 int get_pos(Treap *p) {
     if (!p) return 0;
@@ -83,4 +83,4 @@ int get_pos(Treap *p) {
         p = p->fa;
     }
     return sz;
-}
+} // {db3d15}

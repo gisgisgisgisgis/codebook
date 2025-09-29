@@ -20,6 +20,7 @@ struct Convex {
         return min(inside(p, L, less{}), inside(p, U, greater{}));
     }
     static bool cmp(Pt a, Pt b) { return sgn(a ^ b) > 0; }
+    // [d74fcb]
     // A[i] is a far/closer tangent point
     int tangent(Pt v, bool close = true) {
         assert(v != Pt{});
@@ -27,7 +28,7 @@ struct Convex {
         if (v < Pt{}) l = r, r = V.end();
         if (close) return (lower_bound(l, r, v, cmp) - V.begin()) % n;
         return (upper_bound(l, r, v, cmp) - V.begin()) % n;
-    } 
+    } // [6d8bda]
     // closer tangent point
     array<int, 2> tangent2(Pt p) {
         array<int, 2> t{-1, -1};
@@ -43,7 +44,7 @@ struct Convex {
         for (int i = 0; i != t[0]; i = tangent((A[t[0] = i] - p), 0));
         for (int i = 0; i != t[1]; i = tangent((p - A[t[1] = i]), 1));
         return t;
-    }
+    } // [583fa1]
     int find(int l, int r, Line L) {
         if (r < l) r += n;
         int s = PtSide(A[l % n], L);
@@ -57,5 +58,5 @@ struct Convex {
         int l = tangent(L.a - L.b), r = tangent(L.b - L.a);
         if (PtSide(A[l], L) * PtSide(A[r], L) >= 0) return {};
         return {find(l, r, L) % n, find(r, l, L) % n};
-    }
+    } // {6e9761}
 };

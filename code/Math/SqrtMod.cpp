@@ -15,7 +15,7 @@ int Jacobi(int a, int m) {
 		swap(a, m);
 	}
 	return s;
-}
+} // [00fa11]
 
 // 0: a == 0
 // -1: a isn't a quad res of p

@@ -1,54 +1,66 @@
-namespace lct {
-Node *access(Node *x) {
-    Node *last = {};
-    while (x) {
-        splay(x);
-        push(x);
-        x->ch[0] = last;
-        pull(x);
-        last = x;
-        x = x->p;
+using Z = ModInt<998244353>;
+// using F = long double;
+using Matrix = std::vector<std::vector<Z>>;
+// using Matrix = std::vector<std::vector<F>>; (double)
+// using Matrix = std::vector<std::bitset<5000>>; (mod 2)
+
+template <typename T>
+auto gauss(Matrix &A, std::vector<T> &b, int n, int m) {
+    assert(ssize(b) == n);
+    int r = 0;
+    std::vector<int> where(m, -1);
+    for (int i = 0; i < m && r < n; i++) {
+        int p = r;  // pivot
+        while (p < n && A[p][i] == T(0)) p++;
+        if (p == n) continue;
+        std::swap(A[r], A[p]), std::swap(b[r], b[p]);
+        where[i] = r;
+        // coef: mod 2 don't need this
+        T inv = T(1) / A[r][i];
+        for (int j = i; j < m; j++) A[r][j] *= inv;
+        b[r] *= inv;
+        for (int j = 0; j < n; j++) {  // deduct: mod 2 don't need this
+            if (j != r) {
+                T x = A[j][i];
+                for (int k = i; k < m; k++) {
+                    A[j][k] -= x * A[r][k];
+                }
+                b[j] -= x * b[r];
+            }
+        }
+        // for (int j = 0; j < n; ++j) { // (mod 2) -> coef and deduct
+        //     if (j != r && A[j][i]) {
+        //         A[j] ^= A[r], b[j] ^= b[r];
+        //     }
+        // }
+        r++;
     }
-    return last;
-}
-void make_root(Node *x) {
-    access(x);
-    splay(x);
-    reverse(x);
-}
-Node *find_root(Node *x) {
-    push(x = access(x));
-    while (x->ch[1]) {
-        push(x = x->ch[1]);
+    for (int i = r; i < n; i++) {
+        if (ranges::all_of(A[i] | views::take(m), [](auto &x) { return x == T(0); }) && b[i] != T(0)) {
+            return std::tuple(-1, std::vector<T>(), std::vector<std::vector<T>>());  // no solution
+        }
+        // if (A[i].none() && b[i]) { // (mod 2)
+        //     return std::tuple(-1, std::vector<T>(), std::vector<std::vector<T>>());
+        // }
     }
-    splay(x);
-    return x;
-}
-bool link(Node *x, Node *y) {
-    if (find_root(x) == find_root(y)) {
-        return false;
+    // if (r < m) { // infinite solution
+    //     return ;
+    // }
+    std::vector<T> sol(m);
+    std::vector<std::vector<T>> basis;
+    for (int i = 0; i < m; i++) {
+        if (where[i] != -1) {
+            sol[i] = b[where[i]];
+        } else {
+            std::vector<T> v(m); v[i] = 1;
+            for (int j = 0; j < m; j++) {
+                if (where[j] != -1) {
+                    v[j] = A[where[j]][i] * T(-1);
+                    // v[j] = A[where[j]][i]; (mod 2)
+                }
+            }
+            basis.push_back(std::move(v));
+        }
     }
-    make_root(x);
-    x->p = y;
-    return true;
-}
-bool cut(Node *a, Node *b) {
-    make_root(a);
-    access(b);
-    splay(a);
-    if (a->ch[0] == b) {
-        split(a);
-        return true;
-    }
-    return false;
-}
-Info query(Node *a, Node *b) {
-    make_root(b);
-    return get(access(a));
-}
-void set(Node *x, Info v) {
-    splay(x);
-    push(x);
-    x->info = v;
-    pull(x);
-} }
+    return std::tuple(r, sol, basis);
+};

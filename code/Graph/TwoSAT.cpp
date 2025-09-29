@@ -29,7 +29,7 @@ struct TwoSat {
             tie(pu, pf) = make_pair(nxt, true);
         }
         addClause(pu, !pf, li[1].first, !li[1].second);
-    }
+    } // {b42333}
     int cur = 0, scc = 0;
     void dfs(int u) {
         stk.push_back(u);
@@ -69,4 +69,4 @@ struct TwoSat {
         }
         return true;
     }
-};
+}; // [9fb62b] \ addVar, addAtMostOne
