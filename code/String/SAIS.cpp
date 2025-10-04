@@ -1,6 +1,6 @@
 auto sais(const auto &s) {
     const int n = (int)s.size(), z = ranges::max(s) + 1;
-    if (n == 1) return vector{0};
+    if (n == 1) return vector{0LL};
     vector<int> c(z); for (int x : s) ++c[x];
     partial_sum(all(c), begin(c));
     vector<int> sa(n); auto I = views::iota(0, n);
