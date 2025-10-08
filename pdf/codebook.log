@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  8 OCT 2025 17:47
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  8 OCT 2025 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,7 +707,6 @@ LaTeX Font Warning: Font shape `TU/FiraCode(0)/b/n' undefined
 (Font)              using `TU/FiraCode(0)/m/n' instead on input line 2.
 
 ) (../code/Basic/run) (../code/Basic/tem.cpp) (../code/Basic/debug.cpp)
-(../code/Basic/run.bat
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -716,8 +715,9 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [1
 
-]) (../code/Basic/random.cpp) (../code/Basic/TempleHash.sh)
-(../code/Misc/FastIO.cpp) (../code/Misc/stress.sh
+] (../code/Basic/run.bat) (../code/Basic/random.cpp)
+(../code/Basic/TempleHash.sh) (../code/Misc/FastIO.cpp) (../code/Misc/stress.sh
+
 
 ) (../code/Misc/stress.bat) (../code/Misc/Timer.cpp)
 (../code/Misc/Min_Plus_Convolution.cpp) (../code/Misc/FractionSearch.cpp
@@ -975,19 +975,13 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `codebook.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `codebook.out':
-(rerunfilecheck)             Before: 37274AD7305C0C9C444E5D68F4A1B54B;11333
-(rerunfilecheck)             After:  14D1807B321EEE0233C0ECFB86772924;14600.
+Package rerunfilecheck Info: File `codebook.out' has not changed.
+(rerunfilecheck)             Checksum: 14D1807B321EEE0233C0ECFB86772924;14600.
  ) 
 Here is how much of TeX's memory you used:
  18316 strings out of 409029
  355922 string characters out of 5756944
- 2511603 words of memory out of 5000000
+ 2512603 words of memory out of 5000000
  40533 multiletter control sequences out of 15000+600000
  560486 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
