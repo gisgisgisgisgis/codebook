@@ -1,11 +1,11 @@
 // 0-based
 struct PlanarGraph{
     int n, m, id;
-    vector<Pt<int>> v;
+    vector<Pt> v;
     vector<vector<pair<int, int>>> adj;
     vector<int> conv, nxt, vis;
 
-    PlanarGraph(int n, int m, vector<Pt<int>> _v) : 
+    PlanarGraph(int n, int m, vector<Pt> _v) : 
     n(n), m(m), id(0),
     v(_v), adj(n),
     conv(m << 1), nxt(m << 1), vis(m << 1) {}
@@ -21,7 +21,7 @@ struct PlanarGraph{
     vector<int> enumerate_face() {
         for (int i = 0; i < n; i++) {
             sort(all(adj[i]), [&](const auto &a, const auto & b) {
-                return (v[a.first] - v[i]) < (v[b.first] - v[i]);
+                return argcmp((v[a.first] - v[i]), (v[b.first] - v[i]));
             });
             int sz = adj[i].size(), pre = sz - 1;
             for (int j = 0; j < sz; j++) {
