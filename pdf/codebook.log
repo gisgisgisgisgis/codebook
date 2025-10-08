@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  19 SEP 2025 16:43
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.8.13)  8 OCT 2025 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -786,10 +786,14 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[8]) (../code/Geometry/HalfPlaneIntersection.cpp)
-(../code/Geometry/MinimalEnclosingCircle.cpp
+[8]) (../code/Geometry/HalfPlaneIntersection.cpp
 
-) (../code/Geometry/Minkowski.cpp) (../code/Geometry/PointInCircumcircle.cpp)
+) (../code/Geometry/MinimalEnclosingCircle.cpp) (../code/Geometry/Minkowski.cpp
+) (../code/Geometry/PointInCircumcircle.cpp)
+Underfull \hbox (badness 4096) in paragraph at lines 200--200
+|[]\TU/PingFangTC(0)/b/n/12 Tangent Lines of Circle from Point
+ []
+
 (../code/Geometry/TangentLinesOfCirclePoint.cpp)
 
 
@@ -828,59 +832,54 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [12]) (../code/Graph/VirtualTree.cpp
 
-) (../code/Math/Combinatoric.cpp) (../code/Math/DiscreteLog.cpp
+) (../code/Graph/FunctionalGraph.cpp) (../code/Math/Combinatoric.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[13]) (../code/Math/DivFloorCeil.cpp) (../code/Math/exCRT.cpp)
-(../code/Math/Factorization.cpp
+[13]) (../code/Math/DiscreteLog.cpp) (../code/Math/DivFloorCeil.cpp
 
-) (../code/Math/FloorSum.cpp) (../code/Math/FWT.cpp)
+) (../code/Math/exCRT.cpp) (../code/Math/Factorization.cpp
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[14]) (../code/Math/FloorSum.cpp) (../code/Math/FWT.cpp)
 (../code/Math/GaussElimination.cpp
 
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[14]) (../code/Math/LagrageInterpolation.cpp
-
-) (../code/Math/LinearSieve.cpp) (../code/Math/Lucas.cpp)
-(../code/Math/ModInt.cpp
+) (../code/Math/LagrageInterpolation.cpp) (../code/Math/LinearSieve.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[15]) (../code/Math/PrimitiveRoot.cpp) (../code/Math/Simplex.cpp
+[15]) (../code/Math/Lucas.cpp) (../code/Math/ModInt.cpp
 
-) (../code/Math/SqrtMod.cpp
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[16]) (../code/Math/LinearSol.cpp) (../code/Math/PiCount.cpp)
-(../code/Math/Triangular.tex
-
-) (../code/Math/ModMin.cpp) (../code/Math/FFT.cpp) (../code/Math/NTT.cpp
+) (../code/Math/PrimitiveRoot.cpp) (../code/Math/Simplex.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[17]) (../code/Math/NTTprime.tex) (../code/Math/Polynomial.cpp
+[16]) (../code/Math/SqrtMod.cpp) (../code/Math/LinearSol.cpp
+
+) (../code/Math/PiCount.cpp) (../code/Math/Triangular.tex)
+(../code/Math/ModMin.cpp
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
+[17]) (../code/Math/FFT.cpp) (../code/Math/NTT.cpp) (../code/Math/NTTprime.tex
 
+) (../code/Math/Polynomial.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -902,23 +901,16 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[19]) (../code/Math/Theorem.tex
+[19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+) (../code/Math/Theorem.tex
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 12.
-
-Missing character: There is no ő in font [./fonts/PingFang/PingFangTC-Regular.o
-tf]/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 3229) in paragraph at lines 53--55
-[] \OT1/cmr/m/n/7 = \OMS/cmsy/m/n/7 j[]j \OT1/cmr/m/n/7 = \OMS/cmsy/m/n/7 j[]j 
-\OT1/cmr/m/n/7 =
- []
 
 
 
@@ -931,6 +923,16 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 Missing character: There is no ő in font [./fonts/PingFang/PingFangTC-Regular.o
 tf]/OT:script=latn;language=dflt;mapping=tex-text;!
 
+Underfull \hbox (badness 3229) in paragraph at lines 53--55
+[] \OT1/cmr/m/n/7 = \OMS/cmsy/m/n/7 j[]j \OT1/cmr/m/n/7 = \OMS/cmsy/m/n/7 j[]j 
+\OT1/cmr/m/n/7 =
+ []
+
+
+
+Missing character: There is no ő in font [./fonts/PingFang/PingFangTC-Regular.o
+tf]/OT:script=latn;language=dflt;mapping=tex-text;!
+
 Underfull \hbox (badness 3039) in paragraph at lines 100--102
 \TU/PingFangTC(0)/m/n/7 Given a degree sequence $\OML/cmm/m/it/7 d[]; [] ; d[]$
  \TU/PingFangTC(0)/m/n/7 of a labeled tree, there are
@@ -938,24 +940,33 @@ Underfull \hbox (badness 3039) in paragraph at lines 100--102
 
 ) (../code/String/AhoCorasickAM.cpp
 
-) (../code/String/DoubleString.cpp
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+
+[21]) (../code/String/DoubleString.cpp) (../code/String/LyndonFactorization.cpp
+
+
+) (../code/String/Manacher.cpp) (../code/String/SAIS.cpp
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[21]) (../code/String/LyndonFactorization.cpp) (../code/String/Manacher.cpp)
-(../code/String/SAIS.cpp
+[22]) (../code/String/SuffixArray.cpp) (../code/String/Zvalue.cpp)
 
-) (../code/String/SuffixArray.cpp) (../code/String/Zvalue.cpp)
+
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
-[22] (codebook.aux)
+[23
+
+] (codebook.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -964,16 +975,22 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `codebook.out' has not changed.
-(rerunfilecheck)             Checksum: 37274AD7305C0C9C444E5D68F4A1B54B;11333.
+
+Package rerunfilecheck Warning: File `codebook.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `codebook.out':
+(rerunfilecheck)             Before: 37274AD7305C0C9C444E5D68F4A1B54B;11333
+(rerunfilecheck)             After:  14D1807B321EEE0233C0ECFB86772924;14600.
  ) 
 Here is how much of TeX's memory you used:
- 18302 strings out of 409029
- 355633 string characters out of 5756944
- 2464603 words of memory out of 5000000
- 40522 multiletter control sequences out of 15000+600000
+ 18316 strings out of 409029
+ 355922 string characters out of 5756944
+ 2511603 words of memory out of 5000000
+ 40533 multiletter control sequences out of 15000+600000
  560486 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,547b,1788s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on codebook.pdf (22 pages).
+Output written on codebook.pdf (23 pages).

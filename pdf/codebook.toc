@@ -2,7 +2,7 @@
 \contentsline {subsection}{\numberline {1.1}createFile}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}run}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}tem}{1}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}debug}{1}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}debug [ca7eb5]}{1}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}run.bat}{2}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}random}{2}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}TempleHash}{2}{subsection.1.7}%
@@ -11,86 +11,87 @@
 \contentsline {subsection}{\numberline {2.2}stress.sh}{2}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}stress.bat}{2}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Timer}{2}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}MinPlusConvolution}{2}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}FractionSearch}{2}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Montgomery}{3}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.5}MinPlusConvolution [a3e78d]}{2}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}FractionSearch [be56a1]}{2}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Montgomery [525d1f]}{3}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}PyTrick}{3}{subsection.2.8}%
 \contentsline {section}{\numberline {3}Data Structure}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Fenwick Tree}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Li Chao}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}PBDS}{4}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}ODT}{4}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Sparse Table}{4}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Splay}{4}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Treap}{5}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.1}Fenwick Tree [6837cb]}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Li Chao [d18bf0]}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}PBDS [e96d11]}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}ODT [0ed806]}{4}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Sparse Table [9db772]}{4}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Splay [650110]}{4}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Treap [b6b227]}{5}{subsection.3.7}%
 \contentsline {section}{\numberline {4}Matching and Flow}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Dinic [f4f3bb]}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}General Matching}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}KM}{6}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}HopcroftKarp}{6}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}MCMF}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.2}General Matching [c4df3f]}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}KM [8aa560]}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}HopcroftKarp [a760ee]}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}MCMF [ffa875]}{7}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Model}{7}{subsection.4.6}%
 \contentsline {section}{\numberline {5}Geometry}{7}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Point [aa26d8]}{7}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Line [45ec8b]}{8}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Circle}{8}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Point to Segment Distance}{8}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Point In Polygon}{8}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Intersection of Line}{8}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Intersection of Circles}{8}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Intersection of Circle and Line}{8}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Area of Circle Polygon}{8}{subsection.5.9}%
-\contentsline {subsection}{\numberline {5.10}Convex Hull}{8}{subsection.5.10}%
-\contentsline {subsection}{\numberline {5.11}Convex Trick}{8}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.3}Circle [55cf19]}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Point to Segment Distance [0c07fc]}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Point In Polygon [ae764a]}{8}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Intersection of Line [31415c]}{8}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Intersection of Circles [3c00f3]}{8}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Intersection of Circle and Line [a53f3c]}{8}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Area of Circle Polygon [6783c6]}{8}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Convex Hull [d56d39]}{8}{subsection.5.10}%
+\contentsline {subsection}{\numberline {5.11}Convex Trick [92ac89]}{8}{subsection.5.11}%
 \contentsline {subsection}{\numberline {5.12}Half Plane Intersection [b913b6]}{9}{subsection.5.12}%
-\contentsline {subsection}{\numberline {5.13}Minimal Enclosing Circle}{9}{subsection.5.13}%
-\contentsline {subsection}{\numberline {5.14}Minkowski}{9}{subsection.5.14}%
-\contentsline {subsection}{\numberline {5.15}Point In Circumcircle}{9}{subsection.5.15}%
-\contentsline {subsection}{\numberline {5.16}Tangent Lines of Circle and Point}{9}{subsection.5.16}%
-\contentsline {subsection}{\numberline {5.17}Tangent Lines of Circles}{10}{subsection.5.17}%
-\contentsline {subsection}{\numberline {5.18}Triangle Center}{10}{subsection.5.18}%
-\contentsline {subsection}{\numberline {5.19}Union of Circles}{10}{subsection.5.19}%
+\contentsline {subsection}{\numberline {5.13}Minimal Enclosing Circle [a05bc4]}{9}{subsection.5.13}%
+\contentsline {subsection}{\numberline {5.14}Minkowski [e90206]}{9}{subsection.5.14}%
+\contentsline {subsection}{\numberline {5.15}Point In Circumcircle [f499c7]}{9}{subsection.5.15}%
+\contentsline {subsection}{\numberline {5.16}Tangent Lines of Circle from Point [bebedd]}{9}{subsection.5.16}%
+\contentsline {subsection}{\numberline {5.17}Tangent Lines of Circles [fd34e8]}{10}{subsection.5.17}%
+\contentsline {subsection}{\numberline {5.18}Triangle Center [085b8e]}{10}{subsection.5.18}%
+\contentsline {subsection}{\numberline {5.19}Union of Circles [f29049]}{10}{subsection.5.19}%
 \contentsline {section}{\numberline {6}Graph}{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Block Cut Tree}{10}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Count Cycles}{10}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Dominator Tree}{11}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Enumerate Planar Face}{11}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Manhattan MST}{11}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Matroid Intersection}{11}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Maximum Clique}{12}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Tree Hash}{12}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Two-SAT}{12}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}Virtual Tree}{13}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.1}Block Cut Tree [c8aef1]}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Count Cycles [a0754a]}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Dominator Tree [4b8835]}{11}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Enumerate Planar Face [10dc9a]}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Manhattan MST [98280c]}{11}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Matroid Intersection [c3d412]}{11}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Maximum Clique [3ca044]}{12}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Tree Hash [af0b82]}{12}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Two-SAT [80853f]}{12}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Virtual Tree [83c4da]}{13}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Functional Graph [a9b3cd]}{13}{subsection.6.11}%
 \contentsline {section}{\numberline {7}Math}{13}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Combinatoric}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Discrete Log}{13}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Discrete Log [442909]}{14}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Div Floor Ceil}{14}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}exCRT}{14}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Factorization}{14}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Floor Sum}{14}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}FWT}{14}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Gauss Elimination}{14}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Lagrange Interpolation}{15}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Linear Sieve}{15}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Lucas}{15}{subsection.7.11}%
-\contentsline {subsection}{\numberline {7.12}Mod Int}{15}{subsection.7.12}%
-\contentsline {subsection}{\numberline {7.13}Primitive Root}{16}{subsection.7.13}%
-\contentsline {subsection}{\numberline {7.14}Simplex}{16}{subsection.7.14}%
-\contentsline {subsection}{\numberline {7.15}Sqrt Mod}{16}{subsection.7.15}%
-\contentsline {subsection}{\numberline {7.16}LinearSolve}{17}{subsection.7.16}%
-\contentsline {subsection}{\numberline {7.17}PiCount}{17}{subsection.7.17}%
+\contentsline {subsection}{\numberline {7.4}exCRT [fccd2c]}{14}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Factorization [cd95b9]}{14}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Floor Sum [92460c]}{15}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}FWT [a0135a]}{15}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Gauss Elimination [e45cbd]}{15}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Lagrange Interpolation [b70847]}{15}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Linear Sieve [e7d01a]}{15}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Lucas [5facf0]}{16}{subsection.7.11}%
+\contentsline {subsection}{\numberline {7.12}Mod Int [5a3b5b]}{16}{subsection.7.12}%
+\contentsline {subsection}{\numberline {7.13}Primitive Root [bebd30]}{16}{subsection.7.13}%
+\contentsline {subsection}{\numberline {7.14}Simplex [2e718d]}{16}{subsection.7.14}%
+\contentsline {subsection}{\numberline {7.15}Sqrt Mod [4e4b23]}{17}{subsection.7.15}%
+\contentsline {subsection}{\numberline {7.16}LinearSolve [1c7d11]}{17}{subsection.7.16}%
+\contentsline {subsection}{\numberline {7.17}PiCount [b9ce98]}{17}{subsection.7.17}%
 \contentsline {subsection}{\numberline {7.18}Triangular}{17}{subsection.7.18}%
-\contentsline {subsection}{\numberline {7.19}ModMin}{17}{subsection.7.19}%
-\contentsline {subsection}{\numberline {7.20}FFT}{17}{subsection.7.20}%
-\contentsline {subsection}{\numberline {7.21}NTT [ff4101]}{17}{subsection.7.21}%
+\contentsline {subsection}{\numberline {7.19}ModMin [79217f]}{18}{subsection.7.19}%
+\contentsline {subsection}{\numberline {7.20}FFT [474566]}{18}{subsection.7.20}%
+\contentsline {subsection}{\numberline {7.21}NTT [ff4101]}{18}{subsection.7.21}%
 \contentsline {subsection}{\numberline {7.22}NTT prime}{18}{subsection.7.22}%
 \contentsline {subsection}{\numberline {7.23}Polynomial}{18}{subsection.7.23}%
 \contentsline {subsection}{\numberline {7.24}Theorem}{20}{subsection.7.24}%
 \contentsline {section}{\numberline {8}Stringology}{21}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Aho-Corasick AM}{21}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Double String}{21}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Lyndon Factorization}{22}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Manacher}{22}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}SA-IS [2a7f73, 06a2fa]}{22}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Suffix Array}{22}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Z-value}{22}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.1}Aho-Corasick AM [1f3003]}{21}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Double String [1cdb3b]}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Lyndon Factorization [822807]}{22}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Manacher [ad2217]}{22}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}SA-IS [72a941, a9701f]}{22}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Suffix Array [5e5834]}{23}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Z-value [a39b66]}{23}{subsection.8.7}%
