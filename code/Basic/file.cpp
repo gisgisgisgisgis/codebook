@@ -1,66 +1,39 @@
-using Z = ModInt<998244353>;
-// using F = long double;
-using Matrix = std::vector<std::vector<Z>>;
-// using Matrix = std::vector<std::vector<F>>; (double)
-// using Matrix = std::vector<std::bitset<5000>>; (mod 2)
-
-template <typename T>
-auto gauss(Matrix &A, std::vector<T> &b, int n, int m) {
-    assert(ssize(b) == n);
-    int r = 0;
-    std::vector<int> where(m, -1);
-    for (int i = 0; i < m && r < n; i++) {
-        int p = r;  // pivot
-        while (p < n && A[p][i] == T(0)) p++;
-        if (p == n) continue;
-        std::swap(A[r], A[p]), std::swap(b[r], b[p]);
-        where[i] = r;
-        // coef: mod 2 don't need this
-        T inv = T(1) / A[r][i];
-        for (int j = i; j < m; j++) A[r][j] *= inv;
-        b[r] *= inv;
-        for (int j = 0; j < n; j++) {  // deduct: mod 2 don't need this
-            if (j != r) {
-                T x = A[j][i];
-                for (int k = i; k < m; k++) {
-                    A[j][k] -= x * A[r][k];
-                }
-                b[j] -= x * b[r];
-            }
-        }
-        // for (int j = 0; j < n; ++j) { // (mod 2) -> coef and deduct
-        //     if (j != r && A[j][i]) {
-        //         A[j] ^= A[r], b[j] ^= b[r];
-        //     }
-        // }
-        r++;
+auto sais(const auto &s) {
+    const int n = (int)s.size(), z = ranges::max(s) + 1;
+    if (n == 1) return vector{0LL};
+    vector<int> c(z); for (int x : s) ++c[x];
+    partial_sum(all(c), begin(c));
+    vector<int> sa(n); auto I = views::iota(0, n);
+    vector<bool> t(n); t[n - 1] = true;
+    for (int i = n - 2; i >= 0; i--) 
+        t[i] = (s[i] == s[i + 1] ? t[i + 1] : s[i] < s[i + 1]);
+    auto is_lms = views::filter([&t](int x) {
+        return x && t[x] & !t[x - 1];
+    });
+    auto induce = [&] {
+        for (auto x = c; int y : sa)
+            if (y-- and !t[y]) sa[x[s[y] - 1]++] = y;
+        for (auto x = c; int y : sa | views::reverse)
+            if (y-- and t[y]) sa[--x[s[y]]] = y;
+    };
+    vector<int> lms, q(n); lms.reserve(n);
+    for (auto x = c; int i : I | is_lms) {
+        q[i] = int(lms.size());
+        lms.push_back(sa[--x[s[i]]] = i);
     }
-    for (int i = r; i < n; i++) {
-        if (ranges::all_of(A[i] | views::take(m), [](auto &x) { return x == T(0); }) && b[i] != T(0)) {
-            return std::tuple(-1, std::vector<T>(), std::vector<std::vector<T>>());  // no solution
+    induce(); vector<int> ns(lms.size());
+    for (int j = -1, nz = 0; int i : sa | is_lms) {
+        if (j >= 0) {
+            int len = min({n - i, n - j, lms[q[i] + 1] - i});
+            ns[q[i]] = nz += lexicographical_compare(
+                s.begin() + j, s.begin() + j + len,
+                s.begin() + i, s.begin() + i + len
+            );
         }
-        // if (A[i].none() && b[i]) { // (mod 2)
-        //     return std::tuple(-1, std::vector<T>(), std::vector<std::vector<T>>());
-        // }
+        j = i;
     }
-    // if (r < m) { // infinite solution
-    //     return ;
-    // }
-    std::vector<T> sol(m);
-    std::vector<std::vector<T>> basis;
-    for (int i = 0; i < m; i++) {
-        if (where[i] != -1) {
-            sol[i] = b[where[i]];
-        } else {
-            std::vector<T> v(m); v[i] = 1;
-            for (int j = 0; j < m; j++) {
-                if (where[j] != -1) {
-                    v[j] = A[where[j]][i] * T(-1);
-                    // v[j] = A[where[j]][i]; (mod 2)
-                }
-            }
-            basis.push_back(std::move(v));
-        }
-    }
-    return std::tuple(r, sol, basis);
-};
+    ranges::fill(sa, 0); auto nsa = sais(ns);
+    for (auto x = c; int y : nsa | views::reverse)
+        y = lms[y], sa[--x[s[y]]] = y;
+    return induce(), sa;
+} // 1

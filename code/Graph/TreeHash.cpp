@@ -1,21 +1,16 @@
-map<vector<int>, int> id;
-vector<vector<int>> sub;
-vector<int> siz;
-int getid(const vector<int> &T) {
-    if (id.count(T)) return id[T];
-    int s = 1;
-    for (int x : T) {
-        s += siz[x];
-    }
-    sub.push_back(T);
-    siz.push_back(s);
-    return id[T] = id.size();
+u64 shift(u64 x) {
+    x ^= mask;
+    x ^= x << 7;
+    x ^= x >> 21;
+    x ^= x << 11;
+    x ^= mask;
+    return x;
 }
-int dfs(int u, int f) {
-    vector<int> S;
-    for (int v : G[u]) if (v != f) {
-        S.push_back(dfs(v, u));
+void hash(int u, int pa) {
+    hsh[u] = 1;
+    for (int v : adj[u]) {
+        if (v == pa) continue;
+        hash(hash, v, u);
+        hsh[u] += shift(hsh[v]);
     }
-    sort(all(S));
-    return getid(S);
 }
