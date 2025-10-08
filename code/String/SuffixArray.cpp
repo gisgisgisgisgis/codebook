@@ -1,23 +1,47 @@
-struct SuffixArray {
+struct SA {
     int n;
-	vector<int> suf, rk, S;
-	SuffixArray(vector<int> _S) : S(_S) {
-        n = S.size();
-        suf.assign(n, 0);
-        rk.assign(n * 2, -1);
-		iota(all(suf), 0);
-		for (int i = 0; i < n; i++) rk[i] = S[i];
-		for (int k = 2; k < n + n; k *= 2) {
-			auto cmp = [&](int a, int b) -> bool {
-				return rk[a] == rk[b] ? (rk[a + k / 2] < rk[b + k / 2]) : (rk[a] < rk[b]);
-			};
-			sort(all(suf), cmp);
-			auto tmp = rk;
-			tmp[suf[0]] = 0;
-			for (int i = 1; i < n; i++) {
-                tmp[suf[i]] = tmp[suf[i - 1]] + cmp(suf[i - 1], suf[i]);
+    std::vector<int> sa, rk;
+
+    SA(std::string s) {
+        n = s.size();
+        sa.resize(n);
+        rk.resize(n);
+        std::iota(all(sa), 0);
+        std::sort(all(sa), [&](int a, int b) {
+			return s[a] < s[b];
+		});
+        rk[sa[0]] = 0;
+        for (int i = 1; i < n; i++) {
+            rk[sa[i]] = rk[sa[i - 1]] + (s[sa[i]] != s[sa[i - 1]]);
+        }
+        int k = 1;
+        std::vector<int> tmp, cnt(n);
+        tmp.reserve(n);
+        while (rk[sa[n - 1]] < n - 1) {
+            tmp.clear();
+            for (int i = 0; i < k; i++) {
+                tmp.push_back(n - k + i);
             }
-			rk.swap(tmp);
-		}
-	}
+            for (auto i : sa) if (i >= k) {
+				tmp.push_back(i - k);
+            }
+            std::fill(all(cnt), 0);
+            for (int i = 0; i < n; i++) {
+                cnt[rk[i]]++;
+            }
+            for (int i = 1; i < n; i++) {
+                cnt[i] += cnt[i - 1];
+            }
+            for (int i = n - 1; i >= 0; i--) {
+                sa[--cnt[rk[tmp[i]]]] = tmp[i];
+            }
+            std::swap(rk, tmp);
+            rk[sa[0]] = 0;
+            for (int i = 1; i < n; i++) {
+                rk[sa[i]] = rk[sa[i - 1]] + (tmp[sa[i - 1]] < tmp[sa[i]] || 
+					sa[i - 1] + k == n || tmp[sa[i - 1] + k] < tmp[sa[i] + k]);
+            }
+            k *= 2;
+        }
+    }
 };

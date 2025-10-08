@@ -1,39 +1,47 @@
-auto sais(const auto &s) {
-    const int n = (int)s.size(), z = ranges::max(s) + 1;
-    if (n == 1) return vector{0LL};
-    vector<int> c(z); for (int x : s) ++c[x];
-    partial_sum(all(c), begin(c));
-    vector<int> sa(n); auto I = views::iota(0, n);
-    vector<bool> t(n); t[n - 1] = true;
-    for (int i = n - 2; i >= 0; i--) 
-        t[i] = (s[i] == s[i + 1] ? t[i + 1] : s[i] < s[i + 1]);
-    auto is_lms = views::filter([&t](int x) {
-        return x && t[x] & !t[x - 1];
-    });
-    auto induce = [&] {
-        for (auto x = c; int y : sa)
-            if (y-- and !t[y]) sa[x[s[y] - 1]++] = y;
-        for (auto x = c; int y : sa | views::reverse)
-            if (y-- and t[y]) sa[--x[s[y]]] = y;
-    };
-    vector<int> lms, q(n); lms.reserve(n);
-    for (auto x = c; int i : I | is_lms) {
-        q[i] = int(lms.size());
-        lms.push_back(sa[--x[s[i]]] = i);
-    }
-    induce(); vector<int> ns(lms.size());
-    for (int j = -1, nz = 0; int i : sa | is_lms) {
-        if (j >= 0) {
-            int len = min({n - i, n - j, lms[q[i] + 1] - i});
-            ns[q[i]] = nz += lexicographical_compare(
-                s.begin() + j, s.begin() + j + len,
-                s.begin() + i, s.begin() + i + len
-            );
+struct SA {
+    int n;
+    std::vector<int> sa, rk;
+
+    SA(std::string s) {
+        n = s.size();
+        sa.resize(n);
+        rk.resize(n);
+        std::iota(all(sa), 0);
+        std::sort(all(sa), [&](int a, int b) {
+			return s[a] < s[b];
+		});
+        rk[sa[0]] = 0;
+        for (int i = 1; i < n; i++) {
+            rk[sa[i]] = rk[sa[i - 1]] + (s[sa[i]] != s[sa[i - 1]]);
         }
-        j = i;
+        int k = 1;
+        std::vector<int> tmp, cnt(n);
+        tmp.reserve(n);
+        while (rk[sa[n - 1]] < n - 1) {
+            tmp.clear();
+            for (int i = 0; i < k; i++) {
+                tmp.push_back(n - k + i);
+            }
+            for (auto i : sa) if (i >= k) {
+				tmp.push_back(i - k);
+            }
+            std::fill(all(cnt), 0);
+            for (int i = 0; i < n; i++) {
+                cnt[rk[i]]++;
+            }
+            for (int i = 1; i < n; i++) {
+                cnt[i] += cnt[i - 1];
+            }
+            for (int i = n - 1; i >= 0; i--) {
+                sa[--cnt[rk[tmp[i]]]] = tmp[i];
+            }
+            std::swap(rk, tmp);
+            rk[sa[0]] = 0;
+            for (int i = 1; i < n; i++) {
+                rk[sa[i]] = rk[sa[i - 1]] + (tmp[sa[i - 1]] < tmp[sa[i]] || 
+					sa[i - 1] + k == n || tmp[sa[i - 1] + k] < tmp[sa[i] + k]);
+            }
+            k *= 2;
+        }
     }
-    ranges::fill(sa, 0); auto nsa = sais(ns);
-    for (auto x = c; int y : nsa | views::reverse)
-        y = lms[y], sa[--x[s[y]]] = y;
-    return induce(), sa;
-} // 1
+};
