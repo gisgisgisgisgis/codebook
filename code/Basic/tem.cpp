@@ -6,7 +6,7 @@ using namespace std;
 using i64 = long long;
 
 #define int i64
-#define all(a) a.begin(), a.end()
+#define all(a) begin(a), end(a)
 #define rep(a, b, c) for (int a = b; a < c; a++)
 
 bool chmin(auto& a, auto b) { return (b < a and (a = b, true)); }
