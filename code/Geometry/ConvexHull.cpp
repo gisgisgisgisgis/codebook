@@ -8,7 +8,7 @@ vector<Pt> BuildHull(vector<Pt> pt) {
         rep (i, t, ssize(pt)) {
             while (ssize(hull) > sz && ori(hull.end()[-2], pt[i], hull.back()) >= 0)
                 hull.pop_back();
-            hull.pb(pt[i]);
+            hull.push_back(pt[i]);
         }
         sz = ssize(hull);
         reverse(all(pt));
