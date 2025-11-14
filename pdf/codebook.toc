@@ -3,16 +3,16 @@
 \contentsline {subsection}{\numberline {1.2}run}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}tem}{1}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}debug [ca7eb5]}{1}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}run.bat}{2}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}run.bat}{1}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}random}{2}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}TempleHash}{2}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.7}Hash}{2}{subsection.1.7}%
 \contentsline {section}{\numberline {2}Misc}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}FastIO}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}stress.sh}{2}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}stress.bat}{2}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Timer}{2}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}MinPlusConvolution [a3e78d]}{2}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}FractionSearch [be56a1]}{2}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}FractionSearch [be56a1]}{3}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Montgomery [525d1f]}{3}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}PyTrick}{3}{subsection.2.8}%
 \contentsline {section}{\numberline {3}Data Structure}{3}{section.3}%
@@ -54,16 +54,16 @@
 \contentsline {subsection}{\numberline {6.1}Block Cut Tree [c8aef1]}{10}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Count Cycles [a0754a]}{10}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Dominator Tree [4b8835]}{11}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Enumerate Planar Face [10dc9a]}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.4}Enumerate Planar Face [ac7b47]}{11}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Manhattan MST [98280c]}{11}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Matroid Intersection [c3d412]}{11}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.6}Matroid Intersection [c3d412]}{12}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}Maximum Clique [3ca044]}{12}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}Tree Hash [af0b82]}{12}{subsection.6.8}%
 \contentsline {subsection}{\numberline {6.9}Two-SAT [80853f]}{12}{subsection.6.9}%
 \contentsline {subsection}{\numberline {6.10}Virtual Tree [83c4da]}{13}{subsection.6.10}%
 \contentsline {subsection}{\numberline {6.11}Functional Graph [a9b3cd]}{13}{subsection.6.11}%
-\contentsline {section}{\numberline {7}Math}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Combinatoric}{13}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Math}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Combinatoric}{14}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Discrete Log [442909]}{14}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Div Floor Ceil}{14}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}exCRT [fccd2c]}{14}{subsection.7.4}%
@@ -93,5 +93,6 @@
 \contentsline {subsection}{\numberline {8.3}Lyndon Factorization [822807]}{22}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Manacher [ad2217]}{22}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}SA-IS [72a941, a9701f]}{22}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Suffix Array [5e5834]}{23}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Z-value [a39b66]}{23}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.6}Suffix Array [5455bf]}{23}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}SuffixAutomaton [c59c1d]}{23}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Z-value [a39b66]}{23}{subsection.8.8}%
