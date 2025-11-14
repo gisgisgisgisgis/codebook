@@ -10,6 +10,7 @@ inline int SZ(Treap *p) {
 }
 void Treap::pull() {
     size = 1 + SZ(l) + SZ(r);
+    // fa = nullptr
 }
 Treap *merge(Treap *a, Treap *b) {
     if (!a || !b) return a ? a : b;
